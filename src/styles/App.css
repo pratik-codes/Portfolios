@@ -1,0 +1,14 @@
+Body {
+  /* background: #f8f0e3; */
+}
+.notificationDropDown {
+  display: none;
+}
+@media only screen and (max-width: 900px) {
+  .links {
+    display: none;
+  }
+  .notificationDropDown {
+    display: block;
+  }
+}
