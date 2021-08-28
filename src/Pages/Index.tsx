@@ -4,10 +4,11 @@ import Footer from "../Components/Footer";
 import NavBar from "../Components/Navbar";
 import Projects from "../Components/Projects";
 import Skills from "../Components/Skills";
-import Hero from "./Hero";
+import Hero from "../Components/Hero";
 import { gsap, TimelineLite, Power3 } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import WorkExperience from "../Components/WorkExperience";
 gsap.registerPlugin(ScrollTrigger);
 
 const Index = () => {
@@ -21,12 +22,14 @@ const Index = () => {
       0.15
     );
   }, [t1]);
+
   return (
     <div>
       <div className="animate">
         <NavBar />
         <Hero />
         <Skills />
+        <WorkExperience />
         <Projects />
         <Blogs />
         <Footer />
