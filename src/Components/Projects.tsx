@@ -74,10 +74,12 @@ const Projects = () => {
             })}
           </div>
           <br />
-          <button className="flex m-2 bg-white bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4  rounded-xl ml-3 transition duration-500 ">
+          <button
+            onClick={() => window.open(`//github.com/pratik-codes`, "_blank")}
+            className="flex m-2 bg-white bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4  rounded-xl ml-3 transition duration-500 "
+          >
             All Projects
             <img
-              onClick={() => window.open(`//www.google.com`, "_blank")}
               className="w-6 ml-3 cursor-pointer"
               src={github}
               alt="github"
