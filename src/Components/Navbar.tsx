@@ -31,7 +31,7 @@ export default function NavBar() {
           </button>
           <button
             onClick={() => {
-              window.open(`//www.google.com`, "_blank");
+              window.open(`//pratik-codes.medium.com/`, "_blank");
             }}
             className="m-2  hover:bg-gray-300 text-black font-bold py-2 px-4 rounded-full"
           >
