@@ -4,6 +4,30 @@ import Card from "./Card";
 
 const blogData = [
   {
+    title: "Understanding React's UI Rendering Process.",
+    description: "Learn about how react rendering works internally.",
+    githubLink: "github.com/pratik-codes/Productively",
+    websiteLink: "productive-ly.netlify.app/",
+    mediumLink:
+      "https://dev.to/pratikcodes/understanding-reacts-ui-rendering-process-understanding-virtual-dom-in-depth-2842",
+    tag1: "go",
+    tag2: "backend",
+    tag3: "golang",
+    type: "blogs",
+  },
+  {
+    title: "Why Golang ?",
+    description: "Understanding why go? This article answers the question.",
+    githubLink: "github.com/pratik-codes/Productively",
+    websiteLink: "productive-ly.netlify.app/",
+    mediumLink:
+      "pratik-codes.medium.com/start-stop-upgrade-downgrade-ec2-instances-with-lambda-functions-c23d971f1566",
+    tag1: "go",
+    tag2: "backend",
+    tag3: "golang",
+    type: "blogs",
+  },
+  {
     title: "Start/stop Upgrade/downgrade EC2 instances with lambda functions",
     description:
       "One of the very useful applications is the automation of starting/stopping and upgrading ec2 instances.",

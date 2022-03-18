@@ -27,13 +27,11 @@ const Hero = () => {
           Fullstack Software Engineer{" "}
         </h1>
         <div className="flex justify-center mt-1">
-          <p className=" text-center  border-gray-500 text-xl p-2 w-5/6 2xl:w-4/6 xl:w-4/6 lg:w-4/6 md:w-4/6">
+          <p className=" text-center  border-gray-500 p-2 w-5/6 2xl:w-4/6 xl:w-4/6 lg:w-4/6 md:w-4/6">
             from India working remote 🏡 having industry experience in building
             and deploying scalable web applications. I specialize in JavaScript
             and have professional experience working with React.js Node.js and
-            AWS . I am also very enthusiastic about deep learning and Computer
-            vision hence I am also quite comfortable with Python and its
-            frameworks like FastAPI and Flask.
+            AWS.
           </p>
         </div>
       </div>

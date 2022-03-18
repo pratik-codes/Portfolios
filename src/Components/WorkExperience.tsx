@@ -1,5 +1,42 @@
 import React from "react";
 import scrollDown from "../Assets/Icons/scrollDown.png";
+import CustomCollapsibleCard from "./CustomCollapsibleCard/CustomCollapsibleCard";
+import CardHeader from "./CustomCollapsibleCard/CustomCollapsibleCard";
+
+const workExpData = [
+  {
+    title: "Software Engineer",
+    company: "Velocity, Bengaluru 📍",
+    duration: "Dec 2021 - present",
+    description: [
+      "Working on React to build scalable applications to serve multiple D2C businesses across India with an amazing user experience while using our applications.",
+      "Worked on React, ANT-D (design system), UmiJS(framework like NextJS). ",
+    ],
+    techStack: ["reactjs", "antd", "umi", "ruby on rails"],
+  },
+  {
+    title: "Fullstack SDE - 1",
+    company: "Webknot Technologies, Bengaluru 📍",
+    duration: "Jan 2021 - Dec 2021",
+    description: [
+      "Built Scalable and robust applications with React, Typescript, NodeJS, and Django.",
+      "Also worked on AWS and took part in the architectural decision to plan and scale systems.",
+      "Also helped in the hiring process for the company and took responsibility as a growth master.",
+    ],
+    techStack: ["reactjs", "typescirpt", "nodejs(nestjs)", "django", "aws"],
+  },
+];
+
+const EducationExpData = [
+  {
+    title: "Bachelor of Computer applications - BCA(science)",
+    company: "Pune university, Pune India 📍",
+    duration: "2017 - 2020",
+    description: [
+      "ModernDevs Club leader. Organized competition and hackathons inside college and guided juniors in their dev journey.",
+    ],
+  },
+];
 
 const WorkExperience = () => {
   return (
@@ -18,71 +55,41 @@ const WorkExperience = () => {
           <div className="">
             <h1 className="font-bold text-purple-500">Work History</h1>
           </div>
-          <div className="flex justify-between">
-            <div className="w-4/6">
-              <h1 className="font-bold text-xl text-gray-800">
-                Fullstack SDE - 1
-              </h1>
-              <h1 className="font-bold text-gray-500">
-                Webknot Technologies Pvt Ltd. Remote 📍
-              </h1>
-            </div>
-            <div className="w-2/6 h-full">
-              <h1 className="inline-block align-middle font-bold text-purple-500 ml-2">
-                Jan 2021 - Present
-              </h1>
-            </div>
-          </div>
-          <div className="m-5">
-            <li>
-              Worked Independently on a projects to complete the project from
-              scratch in <b>React and Node</b> also contributed to optimizing
-              and building a backends in <b>Nodejs</b> and received{" "}
-              <a
-                className="font-semibold text-purple-600"
-                href="//https://drive.google.com/file/u/2/d/13AucgIJ0RkzIlekOkEu-xwLeBMfOyCTw/view?usp=sharing"
-              >
-                <b>Spot on Award </b>
-              </a>
-              for exceptional performance on a project called palette.
-            </li>
-            <li>
-              Also worked on the Devops side by deploying on <b>AWS</b> and
-              taking part in the{" "}
-              <b>architectural decision and Disaster recovery plan</b>
-            </li>
-            <li>Contributed to debug large and complex code.</li>
-            <li>
-              Also helped in the hiring process for the company and took
-              responsibility as a growth master.
-            </li>
-          </div>
+          {workExpData.map((data, index) => {
+            return (
+              <CustomCollapsibleCard
+                title={data.title}
+                company={data.company}
+                duration={data.duration}
+                description={data.description}
+                key={index}
+                techStack={data.techStack}
+                skillsTech={null}
+                skillsTechFamiliar={null}
+                type="history"
+              />
+            );
+          })}
           <br></br>
           <br></br>
           <div className="">
             <h1 className="font-bold text-purple-500">Educational History</h1>
           </div>
-          <div className="flex justify-between">
-            <div className="w-4/6">
-              <h1 className="font-bold text-xl text-gray-800">
-                Bachelor of Computer applications - BCA(science)
-              </h1>
-              <h1 className="font-bold text-gray-500">
-                Pune university, Pune India 📍
-              </h1>
-            </div>
-            <div className="w-2/6 h-full">
-              <h1 className="inline-block align-middle font-bold text-purple-500">
-                2017 - 2020
-              </h1>
-            </div>
-          </div>
-          <div className="m-5">
-            <li>
-              ModernDevs Club leader. Organized competition and hackathons
-              inside college and guided juniors in their dev journey.
-            </li>
-          </div>
+          {EducationExpData.map((data, index) => {
+            return (
+              <CustomCollapsibleCard
+                title={data.title}
+                company={data.company}
+                duration={data.duration}
+                description={data.description}
+                key={index}
+                techStack={[]}
+                skillsTech={null}
+                skillsTechFamiliar={null}
+                type="history"
+              />
+            );
+          })}
         </div>
       </div>
 

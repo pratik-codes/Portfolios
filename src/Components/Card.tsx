@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div>
-      <div className="max-w-sm  rounded-xl overflow-hidden shadow-lg h-full">
+      <div className="max-w-sm  rounded-xl overflow-hidden shadow-lg h-full border">
         {/* <img
           className="w-full"
           src={profilePicture}

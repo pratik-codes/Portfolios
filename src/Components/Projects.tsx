@@ -6,6 +6,18 @@ import ProjectCard from "./Card";
 
 const projectData = [
   {
+    title: "Dashlit",
+    description:
+      "An extension and app that handles your links/todos in a single place. Opens as soon as you open a new tab. Future plans to integrate google calendar and much more to make this an awesome productivity platform.",
+    githubLink: "https://github.com/pratik-codes/Dashlit",
+    websiteLink: "https://demodashlit.netlify.app/",
+    mediumLink: "",
+    tag1: "react",
+    tag2: "firebase",
+    tag3: "ant-d",
+    type: "project",
+  },
+  {
     title: "Productively",
     description:
       "Productively is a productivity app on steroids. Which not only takes care of your productivity but other aspects learning and mental health.",
@@ -30,7 +42,7 @@ const projectData = [
     type: "project",
   },
   {
-    title: "Nirvana meditation APP",
+    title: "Nirvana meditation app",
     description:
       "Nirvana is a meditation and study app that lets you meditate and study using the awesome quality sound tracks that includes Guided meditations and ambience sounds.",
     githubLink: "github.com/pratik-codes/Nirvana_Meditation_App",

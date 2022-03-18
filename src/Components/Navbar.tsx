@@ -5,7 +5,7 @@ import Dropdown from "../Components/DropdownButton";
 export default function NavBar() {
   return (
     <div className="Navbar flex justify-center w-full h-18 mt-4 p-2 align-center">
-      <div className="NavContainer border-gray-500 flex justify-between 2xl:w-4/6 xl:w-4/6 l:w-4/6 md:w-5/6 sm:w-6/6 border-black links">
+      <div className="NavContainer border flex justify-between 2xl:w-4/6 xl:w-4/6 l:w-4/6 md:w-5/6 sm:w-6/6  p-1 rounded-2xl ">
         <div>
           <button className="m-2 bg-white hover:bg-gray-300 text-black font-black py-2 px-4 sm:mr-4 rounded-full ml-3">
             Hello world ^
