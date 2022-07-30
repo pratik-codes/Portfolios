@@ -28,10 +28,11 @@ const Hero = () => {
         </h1>
         <div className="flex justify-center mt-1">
           <p className=" text-center  border-gray-500 p-2 w-5/6 2xl:w-4/6 xl:w-4/6 lg:w-4/6 md:w-4/6">
-            from India working remote 🏡 having industry experience in building
-            and deploying scalable web applications. I specialize in JavaScript
-            and have professional experience working with React.js Node.js and
-            AWS.
+            I am a Full Stack developer with industry experience building
+            scalable applications. I have professional experience working with
+            Typescript, React.js, Node.js (Nest and Node js) , Ruby on rails,
+            Django and AWS. Having an eye for design and experience to build
+            robust systems. 🚀
           </p>
         </div>
       </div>
