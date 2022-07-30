@@ -25,7 +25,7 @@ const solutions = [
 
 export default function Dropdown() {
   return (
-    <div className="max-w-sm px-4 mt-2 bg-gray-300 rounded-2xl">
+    <div className="flex justify-center w-4/12 mx-auto mt-2 px-4 mt-2 bg-gray-300 rounded-2xl ">
       <Popover className="relative">
         {({ open }) => (
           <>
@@ -85,7 +85,7 @@ export default function Dropdown() {
                         Blogs
                       </button>
                       <a
-                        className="mailto"
+                        className="m-2 bg-gray-300 text-black font-bold py-2 px-4 rounded-full"
                         href="mailto:pratiktiwari1212@gmail.com"
                       >
                         <button className="m-2bg-gray-300 text-black font-bold py-2 px-4 rounded-full">
