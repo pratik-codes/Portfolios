@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Fragment, useEffect, useRef } from "react";
+import autoAnimate from "@formkit/auto-animate";
+
 import CardDetails from "./CardDetails";
 
 interface Props {
@@ -24,8 +27,15 @@ const CustomCollapsibleCard: React.FC<Props> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const parent = useRef(null);
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+    console.log(parent.current);
+  }, [parent]);
+
   return (
-    <div className="p-5 my-5 rounded-xl shadow-xl border">
+    <div ref={parent} className="p-5 my-5 rounded-xl shadow-xl border">
       {" "}
       <div
         onClick={() => setIsOpen(!isOpen)}
