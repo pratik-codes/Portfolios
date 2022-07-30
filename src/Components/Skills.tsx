@@ -6,13 +6,13 @@ import CustomCollapsibleCard from "./CustomCollapsibleCard/CustomCollapsibleCard
 const skillsData = [
   {
     title: "Languages",
-    tech: ["typescript", "javascript", "python"],
+    tech: ["typescript", "javascript", "python", "ruby"],
     familiar: ["go", "c", "c++", "java"],
   },
   {
     title: "Frontend Technologies",
     tech: ["html", "css", "react.js", "antd", "tailwindcss"],
-    familiar: ["angular, nextjs, react-native"],
+    familiar: ["angular", "nextjs", "react-native"],
   },
   {
     title: "Backend Technologies",
@@ -20,28 +20,29 @@ const skillsData = [
       "Node.js",
       "express.js",
       "nest.js",
+      "ruby on rails",
       "flask",
       "fastapi",
       "django",
       "firebase",
     ],
-    familiar: ["ruby on rails"],
+    familiar: [],
   },
   {
     title: "Database Technologies",
     tech: ["sql", "mongodb", "postgress", "redis"],
-    familiar: ["ruby on rails"],
+    familiar: [],
   },
   {
     title: "Cloud Technologies",
-    tech: ["aws"],
-    familiar: ["Docker", "kubernetes"],
+    tech: ["aws", "Docker", "kubernetes"],
+    familiar: [],
   },
-  {
-    title: "Data science Technologies",
-    tech: ["python", "numpy", "pandas", "matplotlib", "scikit-learn"],
-    familiar: ["computer-vision", "nlp"],
-  },
+  // {
+  //   title: "Data science Technologies",
+  //   tech: ["python", "numpy", "pandas", "matplotlib", "scikit-learn"],
+  //   familiar: ["computer-vision", "nlp"],
+  // },
   {
     title: "Other Technologies",
     tech: ["googling", "powerpoint", "git", "github", "jira"],

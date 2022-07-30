@@ -48,7 +48,9 @@ const CardDetails: React.FC<Props> = ({
                 </span>
               );
             })}
-          <h1 className="font-bold text-gray-500 my-4">Familiar with:</h1>
+          {skillsTechFamiliar && skillsTechFamiliar.length > 0 && (
+            <h1 className="font-bold text-gray-500 my-4">Familiar with:</h1>
+          )}
           {skillsTechFamiliar &&
             skillsTechFamiliar.map((tech: any) => {
               return (
