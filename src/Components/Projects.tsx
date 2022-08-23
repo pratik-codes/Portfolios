@@ -9,8 +9,8 @@ const projectData = [
     title: "Dashlit",
     description:
       "An extension and app that handles your links/todos in a single place. Opens as soon as you open a new tab. Future plans to integrate google calendar and much more to make this an awesome productivity platform.",
-    githubLink: "https://github.com/pratik-codes/Dashlit",
-    websiteLink: "https://demodashlit.netlify.app/",
+    githubLink: "github.com/pratik-codes/Dashlit",
+    websiteLink: "demodashlit.netlify.app/",
     mediumLink: "",
     tag1: "react",
     tag2: "firebase",
