@@ -14,7 +14,7 @@ const IntroSection = () => {
         src="https://pbs.twimg.com/profile_images/1663538735093514240/ffTqlIAb_400x400.jpg"
         alt="profile_picture"
       />
-      <h1 className="text-2xl text-blue-800 dark:text-blue-500 font-bold ">
+      <h1 className="text-2xl text-blue-900 dark:text-blue-500 font-bold ">
         Hey, I'm Pratik
       </h1>
       <p className="text-gray-500 mt-2  text-md">
