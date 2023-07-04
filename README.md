@@ -1,4 +1,5 @@
-# next-template
+
+![screely-1688458937684](https://github.com/pratik-codes/React-Portfolio/assets/64960569/cd4751fe-832c-47e9-8a0e-c247a3524f3c)
 
 A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
 
