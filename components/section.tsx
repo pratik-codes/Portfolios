@@ -181,7 +181,7 @@ export const BlogSection = () => {
       </div>
 
       <Link
-        href="https://blogs.tiwaripratik.com/"
+        href="/blogs"
         target="__blank"
         className="flex gap-2 text-white  text-md mt-6 cursor-pointer hover:underline font-medium"
       >
