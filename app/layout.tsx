@@ -28,6 +28,9 @@ export const metadata: Metadata = {
 interface RootLayoutProps {
   children: React.ReactNode
 }
+export const GlowClass =
+  "before:absolute before:right-0 before:top-0 before:left-0 before:h-full before:w-full before:animate-image-glow before:bg-hero-glow before:opacity-0 after:opacity-90 before:[filter:blur(120px)]";
+
 
 function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -39,6 +42,7 @@ function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
+          {/* <div className={'gradient-1'} ></div> */}
         <SpaceWarpCanvas />
         <head />
          <div className="relative flex min-h-screen flex-col ">

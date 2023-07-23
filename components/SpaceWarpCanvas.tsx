@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 
 const SpaceWarpCanvas = () => {
-  var starSpeed = 1.6;
+  var starSpeed = 2;
 
   function isMobileViewport() {
     // Check if the screen width is less than or equal to a threshold (e.g., 768 pixels).
@@ -24,14 +24,8 @@ const SpaceWarpCanvas = () => {
       mobile = true;
 
     }
-
-    //---
-
     var canvasWidth: any = window.innerWidth;
     var canvasHeight: any = window.innerHeight;
-
-    //---
-
     var canvas = document.createElement('canvas');
     canvas.setAttribute('width', canvasWidth)
     canvas.setAttribute('height', canvasHeight)
@@ -90,7 +84,7 @@ const SpaceWarpCanvas = () => {
     var fovMin = 210;
     var fovMax = fov;
 
-    var starHolderCount = 6000;
+    var starHolderCount = 7000;
     var starHolder: any = [];
     var starBgHolder: any = [];
     var starSpeedMin = starSpeed;

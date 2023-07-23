@@ -11,7 +11,7 @@ function IndexPage() {
         className="bloom subtle egg-bloom-one -top-60 right-[-400px]"
         style={{ transform: 'scale(2)' }}
       />
-      <IntroSection />
+    <IntroSection />
       <ProjectSection />
       <BlogSection />
       <Link

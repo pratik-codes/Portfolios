@@ -15,7 +15,7 @@ export const IntroSection = () => {
         src="https://pbs.twimg.com/profile_images/1663538735093514240/ffTqlIAb_400x400.jpg"
         alt="profile_picture"
       />
-      <div className="text-3xl text-white font-extrabold ">
+      <div className="text-3xl text-white font-extrabold">
         Hey, I'm Pratik 👋
       </div>
       <div className="text-gray-500 mt-2  text-md">
