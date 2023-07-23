@@ -1,209 +1,29 @@
-import Image from "next/image"
-import Link from "next/link"
+import Link from "next/link";
 
-import { Icons } from "@/components/icons"
+import { BlogSection, IntroSection, ProjectSection } from "@/components/section";
+import dynamic from "next/dynamic";
 
-const IntroSection = () => {
+
+function IndexPage() {
   return (
-    <>
-      <Image
-        style={{ marginLeft: "-5px" }}
-        className="rounded-full mb-6"
-        height={200}
-        width={200}
-        src="https://pbs.twimg.com/profile_images/1663538735093514240/ffTqlIAb_400x400.jpg"
-        alt="profile_picture"
+    <section className={"fade-in container grid mt-[8rem] items-center gap-6 pb-8 pt-6 md:py-10"} >
+      <div
+        className="bloom subtle egg-bloom-one -top-60 right-[-400px]"
+        style={{ transform: 'scale(2)' }}
       />
-      <h1 className="text-2xl text-blue-900 dark:text-blue-500 font-bold ">
-        Hey, I'm Pratik
-      </h1>
-      <p className="text-gray-500 mt-2  text-md">
-        I'm a <>fullstack developer</>, <>optimist</>, and a{" "}
-        <>open source advocate</>. I'm currently working on my OS app called{" "}
-        <a
-          className="text-blue-800 dark:text-blue-500 hover:underline hover:font-medium"
-          href="https://dashlit.com"
-          target="_blank"
-        >
-          dashlit.com
-        </a>{" "}
-        and contributing to multiple open source projects.
-      </p>
-
-      <p className="text-gray-500  text-md">
-        I mainly build with{" "}
-        <span className="font-medium">React, Node, GO, AWS and Solidity </span>
-        but I'm always learning new tools & technologies.
-      </p>
-
-      <hr className="mt-12" />
-    </>
-  )
-}
-
-const ProjectSection = () => {
-  return (
-    <>
-      {" "}
-      <div className="mt-12">
-        <h1 className="text-2xl text-blue-800 dark:text-blue-500 font-bold ">
-          Projects
-        </h1>
-        <p className="text-gray-500 mt-2 mb-2  text-md">
-          things I have created
-        </p>
-
-        <Link
-          href="https://dashlit.com/"
-          target="__blank"
-          className="hover:underline hover:font-medium transition-all"
-        >
-          <p className="text-blue-800 dark:text-blue-500  text-md mt-6 underline font-medium">
-            Dashlit
-          </p>
-          <p className="text-gray-500  text-md hover:none">
-            An open source browser extension to boost your productivity and
-            browser experience.
-          </p>
-        </Link>
-
-        <p className="text-blue-800 dark:text-blue-500  text-md mt-6 underline font-medium">
-          Projects I have built working with companies
-        </p>
-        <p className="text-gray-500  text-md hover:none mt-2">
-          Built{" "}
-          <a
-            href="https://www.velocity.in/payments"
-            className="text-blue-800 dark:text-blue-500 hover:underline hover:font-medium"
-          >
-            Payments
-          </a>{" "}
-          (An app used for making payments, vendor management, Invoice
-          managemenet etc) from scratch and{" "}
-          <a
-            href="velocity.in/revenue-based-financing/"
-            className="text-blue-800 dark:text-blue-500 hover:underline hover:font-medium"
-          >
-            Finance
-          </a>{" "}
-          (Loan management system) while working with{" "}
-          <a
-            href="https://www.velocity.in/"
-            className="text-blue-800 dark:text-blue-500 hover:underline hover:font-medium"
-          >
-            Velocity.
-          </a>{" "}
-          Worked mainly on the frontend side in{" "}
-          <span className="font-medium">
-            react, microfrontends, monorepos and typescript.
-          </span>
-        </p>
-
-        <p className="text-gray-500  mt-2 text-md hover:none">
-          Built{" "}
-          <a
-            href="https://www.paletteedu.org/"
-            className="text-blue-800 dark:text-blue-500 hover:underline hover:font-medium"
-          >
-            Palette
-          </a>{" "}
-          (university management app) from scratch and and many other projects
-          while working with{" "}
-          <a
-            href="https://webknot.in/"
-            className="text-blue-800 dark:text-blue-500 hover:underline hover:font-medium"
-          >
-            Webknot.
-          </a>{" "}
-          Worked on the backend as well as frontend side in{" "}
-          <span className="font-medium">react, node(nest.js), AWS. </span>
-          Built the service and managed deployment as well as the infrastucture.
-        </p>
-      </div>
-      <hr className="mt-12" />
-    </>
-  )
-}
-
-const BlogSection = () => {
-  return (
-    <>
-      <div className="mt-12">
-        <h1 className="text-2xl text-blue-800 dark:text-blue-500 font-bold ">
-          Blogs
-        </h1>
-        <p className="text-gray-500 mt-2 mb-2  text-md">
-          I like writing about software development, web3 and producitivity.
-        </p>
-
-        <Link
-          href="https://blogs.tiwaripratik.com/lets-talk-about-react-performance"
-          target="__blank"
-          className="hover:underline hover:font-medium transition-all"
-        >
-          <p className="text-blue-800 dark:text-blue-500  text-md mt-6 underline font-medium">
-            Let's talk about react performance ⚛️
-          </p>
-          <p className="text-gray-500  text-md hover:none">
-            Some of the tips and tricks to improve your react app performance.
-          </p>
-        </Link>
-
-        <Link
-          href="https://blogs.tiwaripratik.com/mono-respositories-in-jsts-what-why-and-how-with-nx"
-          target="__blank"
-          className="hover:underline hover:font-medium transition-all"
-        >
-          <p className="text-blue-800 dark:text-blue-500  text-md mt-6 underline font-medium">
-            Mono Respositories in JS/TS. What? Why? and How? (with Nx)
-          </p>
-          <p className="text-gray-500  text-md hover:none">
-            Sharing about monorepos and how to use them in your projects and
-            thier pros and cons.
-          </p>
-        </Link>
-
-        <Link
-          href="https://blogs.tiwaripratik.com/understanding-reacts-ui-rendering-process-understanding-virtual-dom-in-depth"
-          target="__blank"
-          className="hover:underline hover:font-medium transition-all"
-        >
-          <p className="text-blue-800 dark:text-blue-500  text-md mt-6 underline font-medium">
-            Understanding React's UI Rendering Process (understanding virtual
-            dom in depth)
-          </p>
-          <p className="text-gray-500  text-md hover:none">
-            Sharing about how react works under the hood.
-          </p>
-        </Link>
-      </div>
-
-      <a
-        href="https://blogs.tiwaripratik.com/"
-        target="__blank"
-        className="flex gap-2 text-blue-800 dark:text-blue-500 text-md mt-6 cursor-pointer hover:underline font-medium"
-      >
-        <Icons.open />
-        <span>More blogs</span>{" "}
-      </a>
-    </>
-  )
-}
-
-export default function IndexPage() {
-  return (
-    <section className="container grid mt-[8rem] items-center gap-6 pb-8 pt-6 md:py-10">
       <IntroSection />
       <ProjectSection />
       <BlogSection />
-      <a
+      <Link
         href="https://nextjs.org/"
         target="__blank"
         className="flex gap-2 cursor-pointer hover:font-medium mt-[10rem]"
       >
         Made with Next.js
-        <Image alt="" src="/vercel.svg" width={80} height={20} />
-      </a>
+        <svg height="20px" className="mt-[2px]" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 284 65"><path d="M141.68 16.25c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm117.14-14.5c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm-39.03 3.5c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9v-46h9zM37.59.25l36.95 64H.64l36.95-64zm92.38 5l-27.71 48-27.71-48h10.39l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10v14.8h-9v-34h9v9.2c0-5.08 5.91-9.2 13.2-9.2z" /></svg>
+      </Link>
     </section>
   )
 }
+
+export default dynamic(() => Promise.resolve(IndexPage), { ssr: false });
