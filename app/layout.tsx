@@ -42,7 +42,6 @@ function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          {/* <div className={'gradient-1'} ></div> */}
         <SpaceWarpCanvas />
         <head />
          <div className="relative flex min-h-screen flex-col ">

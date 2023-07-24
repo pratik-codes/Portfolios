@@ -1,3 +1,5 @@
+import { TalkData } from "@/utils/data";
+import Courousel from "./coursouel";
 
 const Talks = () => {
 
@@ -8,8 +10,10 @@ const Talks = () => {
       <div className="text-gray-600">I like to speak about software development 🚀, open source 🥑, web3 🌐, dev tools and productivity.</div>
       </div>
       <div className="mt-12">
-
-    </div>
+        {TalkData.map((item: any) => {
+          return <Courousel {...item} />
+        })}
+      </div>
     </section>
 
   )

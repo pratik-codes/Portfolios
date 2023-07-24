@@ -122,7 +122,7 @@ export const ProjectSection = () => {
           Built the service and managed deployment as well as the infrastucture.
         </div>
       </div>
-      <hr className="mt-12" />
+      {/* <hr className="mt-12" /> */}
     </>
   )
 }

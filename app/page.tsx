@@ -1,8 +1,7 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 
-import { BlogSection, IntroSection, ProjectSection } from "@/components/section";
-import dynamic from "next/dynamic";
-
+import { IntroSection, ProjectSection } from "@/components/section";
 
 function IndexPage() {
   return (
@@ -11,9 +10,9 @@ function IndexPage() {
         className="bloom subtle egg-bloom-one -top-60 right-[-400px]"
         style={{ transform: 'scale(2)' }}
       />
-    <IntroSection />
+      <IntroSection />
       <ProjectSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <Link
         href="https://nextjs.org/"
         target="__blank"

@@ -34,19 +34,6 @@
     --ring: 216 34% 17%;
 
     --radius: 0.5rem;
-
-      .gradient-1 {
-    height: 100vh;
-    width: 100%;
-    background-image: radial-gradient(
-      circle farthest-side at 500px 100px,
-      #6100fe 0%,
-      transaprent 100%
-    );
-    position: absolute;
-    top: 0;
-  }
-
   }
 
 }
