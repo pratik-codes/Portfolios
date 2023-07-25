@@ -7,9 +7,7 @@ const TabsComponent = ({
 }: {
   tabs: Array<{ id: string; label: string }>
 }) => {
-  const [activeTab, setActiveTab] = useState(
-    (window && window.location.pathname.split("/")[1]) || tabs[0].id
-  )
+  const [activeTab, setActiveTab] = useState(tabs[0].id)
   const router = useRouter()
 
   return (
