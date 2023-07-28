@@ -70,16 +70,18 @@ export const ProjectSection = () => {
           Projects I have built working with companies
         </div>
         <div className="text-gray-500  text-md hover:none mt-2">
-          Currently working with{" "}
-          <Link
-            className="text-white  hover:underline hover:font-medium"
-            href="https://securly.com/"
-          >
-            Securly
-          </Link>
-          , building the core extension products to save kids life. Also working
-          on migrating the backend to Golang along with many other feature
-          development and tech debts. <br />
+          <div className="mb-2">
+            Currently working with{" "}
+            <Link
+              className="text-white  hover:underline hover:font-medium"
+              href="https://securly.com/"
+            >
+              Securly
+            </Link>
+            , building the core extension products to save kids life. Also
+            working on migrating the backend to Golang along with many other
+            feature development and tech debts. <br />
+          </div>
           Built{" "}
           <Link
             href="https://www.velocity.in/payments"
