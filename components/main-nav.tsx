@@ -1,14 +1,8 @@
 "use client"
 
-import { NavItem } from "@/types/nav"
-
 import TabsComponent from "./ui/TabsComponent"
 
-interface MainNavProps {
-  items?: NavItem[]
-}
-
-export function MainNav({ items }: MainNavProps) {
+export function MainNav() {
   const tabsProps = [
     {
       id: "",

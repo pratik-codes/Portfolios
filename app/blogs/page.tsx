@@ -2,7 +2,9 @@
 
 import Link from "next/link"
 import { BlogData } from "@/utils/data"
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
+
+import { FadeInUpBox } from "@/components/framer/FadeInUpBox"
 
 const Blogs = () => {
   return (
@@ -17,7 +19,7 @@ const Blogs = () => {
       <div className="mt-12">
         <AnimatePresence>
           {BlogData.map((item: any) => (
-            <motion.div>
+            <FadeInUpBox>
               <Link
                 key={item.title}
                 target="__blank"
@@ -27,7 +29,7 @@ const Blogs = () => {
                 <div className="text-2xl font-bold">{item.title}</div>
                 <div className="text-gray-600">{item.description}</div>
               </Link>
-            </motion.div>
+            </FadeInUpBox>
           ))}
         </AnimatePresence>
       </div>

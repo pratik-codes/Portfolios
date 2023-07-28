@@ -15,8 +15,6 @@ const SpaceWarpCanvas = () => {
   function AnimateSpaceWarp() {
     var mobile = false
 
-    //---
-
     if (isMobileViewport()) {
       mobile = true
     }
@@ -45,8 +43,6 @@ const SpaceWarpCanvas = () => {
     }
 
     document.getElementById("effect")?.appendChild(canvas)
-
-    //---
 
     var ctx: any = canvas.getContext("2d")
     var imageData = ctx.getImageData(0, 0, canvasWidth, canvasHeight)

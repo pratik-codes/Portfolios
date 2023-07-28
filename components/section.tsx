@@ -1,8 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
-import { Icons } from "@/components/icons";
-
+import { Icons } from "@/components/icons"
 
 export const IntroSection = () => {
   return (
@@ -47,9 +46,7 @@ export const ProjectSection = () => {
     <>
       {" "}
       <div className="mt-12">
-        <div className="text-2xl text-white  font-bold ">
-          Projects
-        </div>
+        <div className="text-2xl text-white  font-bold ">Projects</div>
         <div className="text-gray-500 mt-2 mb-2  text-md">
           things I have created
         </div>
@@ -73,6 +70,16 @@ export const ProjectSection = () => {
           Projects I have built working with companies
         </div>
         <div className="text-gray-500  text-md hover:none mt-2">
+          Currently working with{" "}
+          <Link
+            className="text-white  hover:underline hover:font-medium"
+            href="https://securly.com/"
+          >
+            Securly
+          </Link>
+          , building the core extension products to save kids life. Also working
+          on migrating the backend to Golang along with many other feature
+          development and tech debts. <br />
           Built{" "}
           <Link
             href="https://www.velocity.in/payments"
@@ -131,9 +138,7 @@ export const BlogSection = () => {
   return (
     <>
       <div className="mt-12">
-        <div className="text-2xl text-white  font-bold ">
-          Blogs
-        </div>
+        <div className="text-2xl text-white  font-bold ">Blogs</div>
         <div className="text-gray-500 mt-2 mb-2  text-md">
           I like writing about software development, web3 and producitivity.
         </div>
