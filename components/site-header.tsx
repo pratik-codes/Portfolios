@@ -4,13 +4,10 @@ import { siteConfig } from "@/config/site"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 
-import ColorGlow from "./ui/color-glow"
-
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 w-full bg-background">
+    <header className="z-[1] w-full">
       <div className="container flex h-16 items-center sm:justify-between ">
-        <ColorGlow />
         <MainNav />
         <div className="flex flex-1 items-center justify-end">
           <nav className="flex items-center ">

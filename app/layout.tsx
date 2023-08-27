@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
+import ColorGlow from "@/components/ui/color-glow"
 import SpaceWarpCanvas from "@/components/SpaceWarpCanvas"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
@@ -42,6 +43,7 @@ function RootLayout({ children }: RootLayoutProps) {
         >
           <head />
           <div className="relative flex min-h-screen flex-col ">
+            <ColorGlow />
             <SpaceWarpCanvas />
             <SiteHeader />
             <div className="z-[10]">{children}</div>
