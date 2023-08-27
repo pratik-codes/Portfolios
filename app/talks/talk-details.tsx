@@ -66,7 +66,7 @@ const TalkDetails = ({ talkData }: any) => {
         <div className="text-3xl font-bold mb-8">Tweets</div>
         <div className="grid grid-auto md:grid-cols-2 gap-8">
           {twitter_embeds.map((tweet: any) => (
-            <div>
+            <div className="">
               <Tweet id={tweet} />
             </div>
           ))}
