@@ -63,6 +63,8 @@ const TalkDetails = ({ talkData }: any) => {
         </div>
 
         <hr className="my-12" />
+      </section>
+      <div className="md:container">
         <div className="text-3xl font-bold mb-8">Tweets</div>
         <div className="grid grid-auto md:grid-cols-2 gap-8">
           {twitter_embeds.map((tweet: any) => (
@@ -71,7 +73,7 @@ const TalkDetails = ({ talkData }: any) => {
             </div>
           ))}
         </div>
-      </section>
+      </div>
     </FadeInUpBox>
   )
 }
