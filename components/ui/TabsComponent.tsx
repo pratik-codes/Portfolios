@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 
 const TabsComponent = ({
@@ -7,7 +7,12 @@ const TabsComponent = ({
 }: {
   tabs: Array<{ id: string; label: string }>
 }) => {
-  const [activeTab, setActiveTab] = useState(tabs[0].id)
+  const pathname = usePathname()
+  const getDefaultState = () => {
+    const activeTab = tabs.find((tab) => pathname.includes(tab.label))
+    return activeTab?.id ?? tabs[0].id
+  }
+  const [activeTab, setActiveTab] = useState(() => getDefaultState())
   const router = useRouter()
 
   return (
