@@ -9,11 +9,11 @@ import ColorGlow from "./ui/color-glow"
 export function SiteHeader() {
   return (
     <header className="sticky top-0 w-full bg-background">
-      <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+      <div className="container flex h-16 items-center sm:justify-between ">
         <ColorGlow />
         <MainNav />
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-2">
+        <div className="flex flex-1 items-center justify-end">
+          <nav className="flex items-center ">
             <Link
               href={siteConfig.links.github}
               target="_blank"
