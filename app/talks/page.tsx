@@ -17,7 +17,7 @@ const Talks = () => {
         </div>
       </div>
       <FadeInUpBox>
-        <div className="mt-12">
+        <div className="mt-12 grid md:grid-cols-2">
           {TalkData.map((item: any) => {
             return <Courousel {...item} />
           })}

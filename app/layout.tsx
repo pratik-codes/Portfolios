@@ -40,11 +40,11 @@ function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <SpaceWarpCanvas />
           <head />
           <div className="relative flex min-h-screen flex-col ">
+            <SpaceWarpCanvas />
             <SiteHeader />
-            <div className="flex-1">{children}</div>
+            <div className="z-[10]">{children}</div>
           </div>
           <TailwindIndicator />
         </body>

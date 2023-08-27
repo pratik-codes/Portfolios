@@ -8,14 +8,15 @@ export const IntroSection = () => {
     <>
       <Image
         style={{ marginLeft: "-5px" }}
-        className="rounded-full mb-6"
+        className="rounded-full mb-6 "
         height={200}
         width={200}
         src="https://pbs.twimg.com/profile_images/1663538735093514240/ffTqlIAb_400x400.jpg"
         alt="profile_picture"
       />
       <div className="text-3xl text-white font-extrabold">
-        Hey, I'm Pratik 👋
+        Hey, I'm Pratik <span className="animate-shake">👋
+        </span>
       </div>
       <div className="text-gray-500 mt-2  text-md">
         I'm a <>fullstack developer 🚀</>, <>optimist 🧠</>, and a{" "}

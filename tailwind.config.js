@@ -3,7 +3,7 @@ const { fontFamily } = require( "tailwindcss/defaultTheme" );
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   // darkMode: "class",
-  content: [ "app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}" ],
+  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   theme: {
     keyframes: {
       "fade-in": {
@@ -74,7 +74,7 @@ module.exports = {
       bounce: "240ms ease 0s 1 running bounce",
     },
     backgroundImage: {
-      "primary-gradient":
+      "new-gradient":
         "linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%)",
       "page-gradient":
         "radial-gradient(ellipse 80% 50% at 50% -20%,rgba(120,119,198,0.3), transparent)",
@@ -93,7 +93,7 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "800px",
+        "2xl": "900px",
       },
     },
     extend: {
@@ -140,7 +140,7 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: [ "var(--font-sans)", ...fontFamily.sans ],
+        sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {
@@ -153,10 +153,14 @@ module.exports = {
         },
       },
       animation: {
+        shake: "shake 0.82s cubic-bezier(.36,.07,.19,.97) both",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      boxShadow: {
+        glow: "0 0 5px 2px rgba(255, 255, 255, 0.5)",
+      },
     },
   },
-  plugins: [ require( "tailwindcss-animate" ) ],
-};
+  plugins: [require("tailwindcss-animate")],
+}

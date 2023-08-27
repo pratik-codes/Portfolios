@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { BlogData } from "@/utils/data"
 import { AnimatePresence } from "framer-motion"
@@ -16,7 +17,7 @@ const Blogs = () => {
           🌐, dev tools and productivity.
         </div>
       </div>
-      <div className="mt-12">
+      <div className="mt-12 grid grid-col-2 space-y-10">
         <AnimatePresence>
           {BlogData.map((item: any) => (
             <FadeInUpBox>
@@ -24,10 +25,33 @@ const Blogs = () => {
                 key={item.title}
                 target="__blank"
                 href={item.url}
-                className="flex justify-center flex-col space-y-2 hover:bg-transparent-white p-4 hover:border-white hover:border rounded-xl translate-all duration-150 my-4"
+                className="flex h-full justify-center flex-col hover:bg-transparent-white border-white hover:border rounded-2xl translate-all"
               >
-                <div className="text-2xl font-bold">{item.title}</div>
-                <div className="text-gray-600">{item.description}</div>
+                <Image
+                  src={item.imageSrc}
+                  sizes="90vw"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
+                  width={500}
+                  height={300}
+                  alt="blog_image"
+                  className="rounded-2xl"
+                />
+                <div className="m-4">
+                  <div className="text-2xl font-bold">{item.title}</div>
+                  <div className="text-gray-600">{item.description}</div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
+                    {item?.hastags?.map((hashtag: string) => {
+                      return (
+                        <div className="mt-2 font-bold text-gray-300 bg-transparent-white border border-white rounded-2xl text-center py-1 px-3">
+                          #{hashtag}
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
               </Link>
             </FadeInUpBox>
           ))}

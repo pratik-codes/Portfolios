@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import Link from "next/link"
 import useMeasure from "react-use-measure"
 
 const Courousel = ({
@@ -10,94 +10,129 @@ const Courousel = ({
   place,
   content_des,
   images,
+  logoImage,
+  link,
 }: {
   title: string
   place: string
+  logoImage: string
   content_des: string
+  link: string
   images: Array<string>
 }) => {
   const [open, setOpen] = useState(false)
   const [ref, bounds] = useMeasure()
 
   return (
-    <div
-      onClick={() => setOpen(!open)}
-      className={`flex justify-center flex-col space-y-2 hover:bg-transparent-white p-4 border-white hover:border cursor-pointer rounded-xl transition-all duration-150 my-4 ${
-        open && " bg-transparent-white border"
-      }`}
-    >
-      <motion.div
-        className="overflow-hidden min-w-6/12"
-        animate={{ height: bounds.height > 0 ? bounds.height : undefined }}
-        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-      >
-        <div ref={ref}>
-          <div className="flex">
-            <div className="w-11/12">
-              <div className="text-2xl font-bold">{title}</div>
-              <div className="mt-2 font-bold text-gray-300 bg-transparent-white border border-white rounded-2xl w-28 text-center py-1 px-2">
-                {place}
-              </div>
-            </div>
-            <div className="w-1/12 flex justify-center items-center transition-all duration-200">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className={`w-6 h-6 transition-all rounded-full border border-white p-1 duration-300 ${
-                  open ? " rotate-180" : ""
-                }`}
-                fill="currentColor"
+    <div className="m-4 group relative flex rounded-2xl bg-transparent-white transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5">
+      <div className="pointer-events-none">
+        <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
+          <svg
+            aria-hidden="true"
+            className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/[0.02] stroke-black/5 dark:fill-white/1 dark:stroke-white/2.5"
+          >
+            <defs>
+              <pattern
+                id=":ru:"
+                width="72"
+                height="56"
+                patternUnits="userSpaceOnUse"
+                x="50%"
+                y="16"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
-          {open && (
-            <div>
-              <div className="pt-6 text-gray-400">{content_des}</div>
-              <div className="mt-6 ml-1 text-xl font-extrabold">Pictures</div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-2 xl:grid-cols-2 mt-4">
-                {images.map((image: string) => {
-                  return (
-                    <Image
-                      className="rounded-xl border-6 border-gray-900 mb-4"
-                      src={image}
-                      alt=""
-                      width="330"
-                      height={100}
-                    />
-                  )
-                })}
-              </div>
-              <div className="mt-6 ml-1 text-xl font-extrabold">Twitter</div>
-              <blockquote className="twitter-tweet">
-                <p lang="en" dir="ltr">
-                  .{" "}
-                  <a href="https://twitter.com/pratikk_tiwari?ref_src=twsrc%5Etfw">
-                    @pratikk_tiwari
-                  </a>{" "}
-                  with a live coding demo!{" "}
-                  <a href="https://t.co/KyaPOsxxrQ">
-                    pic.twitter.com/KyaPOsxxrQ
-                  </a>
-                </p>
-                &mdash; ReactJSPune (@ReactPune){" "}
-                <a href="https://twitter.com/ReactPune/status/1682638222206316545?ref_src=twsrc%5Etfw">
-                  July 22, 2023
-                </a>
-              </blockquote>{" "}
-              <script
-                async
-                src="https://platform.twitter.com/widgets.js"
-              ></script>
-            </div>
-          )}
+                <path d="M.5 56V.5H72" fill="none"></path>
+              </pattern>
+            </defs>
+            <rect
+              width="100%"
+              height="100%"
+              stroke-width="0"
+              fill="url(#:ru:)"
+            ></rect>
+            <svg x="50%" y="16" className="overflow-visible">
+              <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
+              <rect
+                stroke-width="0"
+                width="73"
+                height="57"
+                x="72"
+                y="168"
+              ></rect>
+            </svg>
+          </svg>
         </div>
-      </motion.div>
+        <div
+          className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428]"
+          data-projection-id="5"
+          style={{
+            WebkitMaskImage:
+              "radial-gradient(180px at 302px 34px, white, transparent)",
+          }}
+        ></div>
+        <div
+          className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay transition duration-300 group-hover:opacity-100"
+          data-projection-id="6"
+          style={{
+            WebkitMaskImage:
+              "radial-gradient(180px at 302px 34px, white, transparent)",
+          }}
+        >
+          <svg
+            aria-hidden="true"
+            className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/50 stroke-black/70 dark:fill-white/2.5 dark:stroke-white/10"
+          >
+            <defs>
+              <pattern
+                id=":rv:"
+                width="72"
+                height="56"
+                patternUnits="userSpaceOnUse"
+                x="50%"
+                y="16"
+              >
+                <path d="M.5 56V.5H72" fill="none"></path>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" stroke-width="0" fill="url(#:rv:)">
+              <Image alt="logo" src={logoImage} width={"12"} height={"12"} />
+            </rect>
+            <svg x="50%" y="16" className="overflow-visible">
+              <rect stroke-width="0" width="73" height="57" x="0" y="56"></rect>
+              <rect
+                stroke-width="0"
+                width="73"
+                height="57"
+                x="72"
+                y="168"
+              ></rect>
+            </svg>
+          </svg>
+        </div>
+      </div>
+      <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/7.5 group-hover:ring-zinc-900/10 dark:ring-white/10 dark:group-hover:ring-white/20"></div>
+      <div className="relative rounded-2xl px-4 pb-4 pt-16">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-emerald-300/10 dark:group-hover:ring-emerald-400">
+          <Image
+            alt="logo"
+            src={logoImage}
+            width={38}
+            height={38}
+            className="rounded-full"
+          />
+        </div>
+        <h3 className="mt-4 font-semibold leading-2 text-zinc-900 dark:text-white">
+          <Link href={link}>
+            <span className="absolute inset-0 rounded-2xl"></span>
+            <span className="text-md">{title}</span>
+          </Link>
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+          {content_des}
+        </p>
+        <div className="mt-4 font-bold text-gray-300 bg-transparent-white border-1 border-white rounded-2xl w-fit text-center py-1 px-3 text-sm">
+          {place}
+        </div>
+      </div>
     </div>
   )
 }

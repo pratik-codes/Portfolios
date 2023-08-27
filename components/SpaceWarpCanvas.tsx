@@ -4,7 +4,7 @@
 import { useEffect } from "react"
 
 const SpaceWarpCanvas = () => {
-  var starSpeed = 2
+  var starSpeed = 3
 
   function isMobileViewport() {
     // Check if the screen width is less than or equal to a threshold (e.g., 768 pixels).
@@ -53,7 +53,7 @@ const SpaceWarpCanvas = () => {
     var MATHPI180 = Math.PI / 180
     var MATHPI2 = Math.PI * 2
 
-    var center = { x: canvas.width / 2, y: canvas.height / 2 }
+    var center = { x: canvas.width / 3, y: canvas.height / 3 }
 
     //---
 
@@ -63,7 +63,7 @@ const SpaceWarpCanvas = () => {
 
     //---
 
-    var rotationSpeed = -1.0
+    var rotationSpeed = -5.0
     var rotationSpeedFactor = { x: 0, y: 0 }
     rotationSpeedFactor.x = rotationSpeed / center.x
     rotationSpeedFactor.y = rotationSpeed / center.y
@@ -72,7 +72,7 @@ const SpaceWarpCanvas = () => {
     var fovMin = 210
     var fovMax = fov
 
-    var starHolderCount = 8000
+    var starHolderCount = 5000
     var starHolder: any = []
     var starBgHolder: any = []
     var starSpeedMin = starSpeed
@@ -94,7 +94,7 @@ const SpaceWarpCanvas = () => {
     }
 
     function setPixel(x: any, y: any, r: any, g: any, b: any, a: any) {
-      var i = (x + y * canvasWidth) * 4
+      var i = (x + y * canvasWidth) * 8
 
       pix[i] = r
       pix[i + 1] = g
@@ -110,8 +110,6 @@ const SpaceWarpCanvas = () => {
       pix[i + 2] = pix[i + 2] + b
       pix[i + 3] = a
     }
-
-    //---
 
     function addParticle(x: any, y: any, z: any, ox: any, oy: any, oz: any) {
       var particle: any = {}
@@ -142,7 +140,7 @@ const SpaceWarpCanvas = () => {
         colorValue = Math.floor(Math.random() * 55) + 5
 
         particle = addParticle(x, y, z, x, y, z)
-        particle.color = { r: colorValue, g: colorValue, b: colorValue, a: 255 }
+        particle.color = { r: colorValue, g: colorValue, b: colorValue, a: 355 }
 
         starBgHolder.push(particle)
       }
@@ -162,7 +160,7 @@ const SpaceWarpCanvas = () => {
           b: colorValue,
           a: 255,
         }
-        particle.w = 1
+        particle.w = 100
         particle.distance = starDistance - z
         particle.distanceTotal = Math.round(starDistance + fov - particle.w)
 
