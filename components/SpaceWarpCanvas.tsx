@@ -450,7 +450,7 @@ const SpaceWarpCanvas = () => {
   }, [])
 
   return (
-    <div className="absolute top-0 z-[-1] h-screen" id="holder">
+    <div className="fixed top-0 z-[-1] h-screen" id="holder">
       <div id="effect" style={{ position: "absolute" }}></div>
     </div>
   )
