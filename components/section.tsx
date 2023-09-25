@@ -15,7 +15,9 @@ export const IntroSection = () => {
         alt="profile_picture"
       />
       <div className="text-3xl text-white font-extrabold">
-        Hey, I'm Pratik <span className="animate-shake">👋
+        Hey, I'm Pratik <span className="animate-shake"><span className="animate-pulse">
+          👋
+        </span>
         </span>
       </div>
       <div className="text-gray-500 mt-2  text-md">
@@ -47,7 +49,7 @@ export const ProjectSection = () => {
     <>
       {" "}
       <div className="mt-12">
-        <div className="text-2xl text-white  font-bold ">Projects</div>
+        <div className="text-2xl text-white  font-bold ">Projects.</div>
         <div className="text-gray-500 mt-2 mb-2  text-md">
           things I have created
         </div>

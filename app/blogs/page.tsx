@@ -1,9 +1,9 @@
 "use client"
 
-import Image from "next/image"
-import Link from "next/link"
 import { BlogData } from "@/utils/data"
 import { AnimatePresence } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
 
 import { FadeInUpBox } from "@/components/framer/FadeInUpBox"
 
@@ -11,7 +11,7 @@ const Blogs = () => {
   return (
     <section className="container grid mt-[8rem] items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="p-4">
-        <div className="text-5xl font-extrabold mb-4">Blogs</div>
+        <div className="text-5xl font-extrabold mb-4">Blogs.</div>
         <div className="text-gray-600">
           I like to write about software development 🚀, open source 🥑, web3
           🌐, dev tools and productivity.
