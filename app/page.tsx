@@ -18,7 +18,7 @@ function IndexPage() {
         <Link
           href="https://nextjs.org/"
           target="__blank"
-          className="flex gap-2 cursor-pointer hover:font-medium mt-[10rem]"
+          className="flex gap-2 cursor-pointer hover:font-medium my-[10rem]"
         >
           Made with Next.js
           <svg

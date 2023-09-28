@@ -1,6 +1,6 @@
-import { useState } from "react"
-import { usePathname, useRouter } from "next/navigation"
 import { motion } from "framer-motion"
+import { usePathname, useRouter } from "next/navigation"
+import { useState } from "react"
 
 const TabsComponent = ({
   tabs,
@@ -25,7 +25,7 @@ const TabsComponent = ({
           }}
           key={tab.id}
           className={`${
-            activeTab === tab.id ? "" : "hover:text-white/60"
+            activeTab === tab.id ? "" : "border border-transparent-white hover:text-white/60"
           } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
           style={{
             WebkitTapHighlightColor: "transparent",
