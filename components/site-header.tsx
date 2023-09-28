@@ -1,18 +1,18 @@
 import Link from "next/link"
 
-import { siteConfig } from "@/config/site"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
+import { siteConfig } from "@/config/site"
 
 export function SiteHeader() {
   return (
-    <header className="z-[1] w-full">
-      <div className="container flex h-16 items-center sm:justify-between ">
+    <header className="fixed inset-x-0 bottom-0 z-[100] w-11/12 md:w-3/12 mx-auto mb-4 bg-black border border-emerald-300  rounded-full">
+      <div className="mx-2 my-1 flex items-center sm:justify-between">
         <MainNav />
         <div className="flex flex-1 items-center justify-end">
-          <nav className="flex items-center ">
+          <nav className="flex items-center">
             <Link
-              href={siteConfig.links.github}
+              href={siteConfig.links.twitter}
               target="_blank"
               rel="noreferrer"
             >
@@ -21,7 +21,7 @@ export function SiteHeader() {
                   "p-2 rounded-xl hover:bg-transparent-white transition-all dark:hover:text-neutral-200 flex align-middle"
                 }
               >
-                <Icons.gitHub className="h-5 w-5" />
+                 <Icons.gitHub className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
