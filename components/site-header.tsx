@@ -12,7 +12,7 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center justify-end">
           <nav className="flex items-center">
             <Link
-              href={siteConfig.links.twitter}
+              href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
             >
