@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site"
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 bottom-0 z-[100] w-11/12 md:w-3/12 mx-auto mb-4 bg-black border-2 border-emerald-400  rounded-full">
+    <header className="fixed inset-x-0 bottom-0 z-[100] w-11/12 md:w-7/12 lg:w-3/12 mx-auto mb-4 bg-black border border-emerald-200  rounded-full">
       <div className="mx-2 my-1 flex items-center sm:justify-between">
         <MainNav />
         <div className="flex flex-1 items-center justify-end">
