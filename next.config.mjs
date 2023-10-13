@@ -8,6 +8,7 @@ const nextConfig = {
       "res.cloudinary.com",
       "media.licdn.com",
       "miro.medium.com",
+      "dev-to-uploads.s3.amazonaws.com",
     ],
   },
   reactStrictMode: true,

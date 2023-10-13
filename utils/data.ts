@@ -1,9 +1,9 @@
 export const BlogData: any = [
   {
-    title: "Let's talk about react performance ⚛",
+    title: "Solidity 101: A Starter Guide",
     description:
-      "Some of the tips and tricks to improve your react app performance.",
-    url: "https://blogs.tiwaripratik.com/lets-talk-about-react-performance",
+      "Learn about solidity basics and start building smart contracts in solidity.",
+    url: "https://pratik-codes.medium.com/solidity-101-a-starter-guide-39b2ff0346ee",
     imageSrc:
       "https://cdn.hashnode.com/res/hashnode/image/upload/v1683541190290/816b9865-d5a9-402c-8a66-39f132731355.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
     hastags: ["react", "performance"],
@@ -17,6 +17,15 @@ export const BlogData: any = [
     imageSrc:
       "https://cdn.hashnode.com/res/hashnode/image/upload/v1690038913340/b09cd745-3103-42f6-9314-b2082c839868.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
     hastags: ["server-side-rendering", "file-based-routing", "react", "nextjs"],
+  },
+  {
+    title: "Let's talk about react performance ⚛",
+    description:
+      "Some of the tips and tricks to improve your react app performance.",
+    url: "https://blogs.tiwaripratik.com/lets-talk-about-react-performance",
+    imageSrc:
+      "https://cdn.hashnode.com/res/hashnode/image/upload/v1683541190290/816b9865-d5a9-402c-8a66-39f132731355.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+    hastags: ["react", "performance"],
   },
   {
     title: "Mono Respositories in JS/TS. What? Why? and How? (with Nx)",
@@ -61,6 +70,22 @@ export const BlogData: any = [
     hastags: ["golang"],
   },
   {
+    title: "How to write clean javascript Code",
+    description:
+      "Some pratices that you should follow to write better javascript code. A guide to be a better javascript developer",
+    url: "https://pratik-codes.medium.com/how-to-write-clean-javascript-code-9c1ea003389b",
+    imageSrc: "https://media.licdn.com/dms/image/D4D12AQEj5jjhop10Bw/article-cover_image-shrink_423_752/0/1672073941863?e=1698278400&v=beta&t=GOL7QAQtct1BwfjZKBKIbvNAerxme04n_4rgr79tovo",
+    hastags: ["aws", "lambda", "ec2"],
+  },
+  {
+    title: "How Javascript Works? ( Execution Context )",
+    description:
+      "Understand the internals of javascript and how code is executed in javascript",
+    url: "https://pratik-codes.medium.com/how-javascript-works-execution-context-b8d30ead4666",
+    imageSrc: "https://media.licdn.com/dms/image/D4D12AQEj5jjhop10Bw/article-cover_image-shrink_423_752/0/1672073941863?e=1698278400&v=beta&t=GOL7QAQtct1BwfjZKBKIbvNAerxme04n_4rgr79tovo",
+    hastags: ["aws", "lambda", "ec2"],
+  },
+  {
     title: "Start/stop Upgrade/downgrade EC2 instances with lambda functions",
     description:
       "How can you upgrade/downgrade you EC2 instances with a lambda function. A particular use case I have to face in one of my projects.",
@@ -72,6 +97,13 @@ export const BlogData: any = [
     title: "Javascript concept handbook for interviews",
     description: "A resource for learning about javascript for interviews.",
     url: "https://dev.to/pratikcodes/javascript-concept-handbook-for-interviews-b0j",
+    imageSrc: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*LyZcwuLWv2FArOumCxobpA.png",
+    hastags: ["javascript", "interviews"],
+  },
+  {
+    title: "Optimizers in Neural Networks (very brief and on point)",
+    description: "Understanding and learning about different optimizers in neural networks",
+    url: "https://pratik-codes.medium.com/optimizers-in-neural-networks-in-brief-ad4b339c6acc",
     imageSrc: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*LyZcwuLWv2FArOumCxobpA.png",
     hastags: ["javascript", "interviews"],
   },
