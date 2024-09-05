@@ -2,8 +2,6 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { PersonalProjectData, ProjectData } from "@/utils/data"
-import AvatarPictuer from "assests/avatar-pic.jpg"
-import ProfilePicture from "assests/profile-pic.jpg"
 
 import { Icons } from "@/components/icons"
 
@@ -15,14 +13,14 @@ export const IntroSection = () => {
       <div className="relative group w-[200px] h-[200px] mb-8">
         <div className="absolute w-full h-full rounded-full ring-4 ring-emerald-500 transition-opacity duration-300 group-hover:ring-0">
           <Image
-            src={AvatarPictuer}
+            src={"/assets/avatar-pic.jpg"}
             className="rounded-full object-cover"
             layout="fill" // Ensures the image fills the container while maintaining aspect ratio
             alt="avatar_picture"
           />
         </div>
         <Image
-          src={ProfilePicture}
+          src={"/assets/profile-pic.jpg"}
           className="absolute rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 object-cover"
           layout="fill" // Ensures the image fills the container while maintaining aspect ratio
           alt="profile_picture"
