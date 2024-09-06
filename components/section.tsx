@@ -80,9 +80,9 @@ export const ProjectSection = () => {
               <Link
                 href={project.titleLink}
                 target="_blank"
-                className="transition-all hover:underline hover:bg-transparent hover:font-medium mb-4j"
+                className="text-white hover:underline hover:font-medium"
               >
-                <div className="mt-6 text-md font-medium text-white underline">
+                <div className="mt-6 text-md font-medium text-white">
                   {project.title}
                 </div>
               </Link>
@@ -95,7 +95,7 @@ export const ProjectSection = () => {
                 })}
               </div>
               {/* // show all the hastags */}
-              <div className="text-md text-gray-500 mt-1">
+              <div className="text-md text-gray-500 mt-1 space-x-1localoc">
                 {project.hastags.map((tag: string) => {
                   return <Badge variant="outline">#{tag}</Badge>
                 })}
