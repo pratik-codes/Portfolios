@@ -95,7 +95,7 @@ export const ProjectSection = () => {
                 })}
               </div>
               {/* // show all the hastags */}
-              <div className="text-md text-gray-500 mt-1 space-x-1localoc">
+              <div className="text-md text-gray-500 mt-1 space-x-1">
                 {project.hastags.map((tag: string) => {
                   return <Badge variant="outline">#{tag}</Badge>
                 })}
