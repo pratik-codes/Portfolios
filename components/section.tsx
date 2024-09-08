@@ -11,7 +11,7 @@ export const IntroSection = () => {
   return (
     <>
       <div className="relative group w-[200px] h-[200px] mb-8">
-        <div className="absolute w-full h-full rounded-full ring-4 ring-emerald-500 transition-opacity duration-300 group-hover:ring-0">
+        <div className="absolute w-full h-full rounded-full ring-2 ring-emerald-500 transition-opacity duration-300 group-hover:ring-0">
           <Image
             src={"/assets/avatar-pic.jpg"}
             className="rounded-full object-cover"
