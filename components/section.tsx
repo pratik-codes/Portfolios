@@ -13,7 +13,7 @@ export const IntroSection = () => {
       <div className="relative group w-[200px] h-[200px] mb-8">
         <div className="absolute cursor-pointer w-full h-full border-2 rounded-full ring-2 ring-emerald-500 transition-opacity duration-300 group-hover:ring-0">
           <Image
-            src={"https://pbs.twimg.com/profile_images/1842314449983524864/SPzuIYke_400x400.jpg"}
+            src={"https://pbs.twimg.com/profile_images/1843680446153891840/j30OfHJQ_400x400.jpg"}
             className="rounded-full object-cover cursor-pointer"
             layout="fill" // Ensures the image fills the container while maintaining aspect ratio
             alt="avatar_picture"
