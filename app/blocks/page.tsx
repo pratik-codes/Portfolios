@@ -17,10 +17,10 @@ const Blocks = () => {
 
       <div className="mt-8 space-y-[6rem] mb-12">
         <BaseCard codeLink={"https://github.com/pratik-codes/React-Portfolios/blob/master/components/floating-nav.tsx"}>
-          <FloatingNav addClass="mt-12" />
+          <FloatingNav addClass="mt-[6rem]" />
         </BaseCard>
 
-        <BaseCard>
+        <BaseCard codeLink={"https://github.com/pratik-codes/React-Portfolios/blob/master/components/custom/pulse-avatar.tsx"}>
           <PulseAvatar>
             <Image
               src={"https://pbs.twimg.com/profile_images/1843680446153891840/j30OfHJQ_400x400.jpg"}
