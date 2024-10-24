@@ -24,7 +24,7 @@ const Courousel = ({
   const [ref, bounds] = useMeasure()
 
   return (
-    <div className="m-4 group relative flex rounded-2xl bg-transparent-white transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5">
+    <div className="m-4 group relative flex rounded-2xl bg-transparent-black bg-opacity-50 backdrop-blur-md base-card transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5">
       <div className="pointer-events-none">
         <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
           <svg
@@ -109,9 +109,8 @@ const Courousel = ({
           </svg>
         </div>
       </div>
-      <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/7.5 group-hover:ring-zinc-900/10 dark:ring-white/10 dark:group-hover:ring-white/20"></div>
       <div className="relative rounded-2xl px-4 pb-4 pt-16">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-emerald-300/10 dark:group-hover:ring-emerald-400">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-900/5 backdrop-blur-[2px] transition duration-300 ring-1 ring-base dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-base">
           <Image
             alt="logo"
             src={logoImage}
@@ -129,7 +128,7 @@ const Courousel = ({
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
           {content_des}
         </p>
-        <div className="mt-4 font-bold text-gray-300 bg-transparent-white border-1 border-white rounded-2xl w-fit text-center py-1 px-3 text-sm">
+        <div className="absolute font-bold text-gray-300 base-card top-0 right-0 m-3 rounded-2xl w-fit text-center py-1 px-3 text-sm">
           {place}
         </div>
       </div>

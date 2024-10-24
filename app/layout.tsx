@@ -5,8 +5,8 @@ import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import ColorGlow from "@/components/ui/color-glow"
 import SpaceWarpCanvas from "@/components/SpaceWarpCanvas"
-import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
+import { FloatingNav } from "@/components/floating-nav"
 
 import "@/styles/globals.css"
 
@@ -45,7 +45,7 @@ function RootLayout({ children }: RootLayoutProps) {
           <div className="relative flex min-h-screen flex-col ">
             <ColorGlow />
             <SpaceWarpCanvas />
-            <SiteHeader />
+            <FloatingNav addClass="fixed inset-x-0 bottom-0" />
             <div className="z-[10]">{children}</div>
           </div>
           <TailwindIndicator />

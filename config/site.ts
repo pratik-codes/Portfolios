@@ -12,7 +12,7 @@ export const siteConfig = {
   ],
   links: {
     linkedin: "https://www.linkedin.com/in/pratiktiwari12/",
-    twitter: "https://twitter.com/pratikk_tiwari",
+    twitter: "https://twitter.com/pratikcodes_",
     github: "https://github.com/pratik-codes",
   },
 }

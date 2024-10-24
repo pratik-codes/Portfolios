@@ -98,6 +98,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        "base": "#D14309",
+        "base-border": "rgba(209,67,9,0.2)",
         "transparent-white": "rgba(255, 255, 255, 0.08)",
         transparent: "transparent",
         border: "hsl(var(--border))",

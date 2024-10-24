@@ -23,7 +23,7 @@ const SpaceWarpCanvas = () => {
     var canvas = document.createElement("canvas")
     canvas.setAttribute("width", canvasWidth)
     canvas.setAttribute("height", canvasHeight)
-    canvas.oncontextmenu = function (e) {
+    canvas.oncontextmenu = function(e) {
       e.preventDefault()
     }
 
@@ -160,7 +160,7 @@ const SpaceWarpCanvas = () => {
           b: colorValue,
           a: 255,
         }
-        particle.w = 100
+        particle.w = 300
         particle.distance = starDistance - z
         particle.distanceTotal = Math.round(starDistance + fov - particle.w)
 
@@ -170,12 +170,12 @@ const SpaceWarpCanvas = () => {
 
     //---
 
-    window.requestAnimFrame = (function () {
+    window.requestAnimFrame = (function() {
       return (
         window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
-        function (callback) {
+        function(callback) {
           window.setTimeout(callback, 1000 / 60)
         }
       )
@@ -336,12 +336,12 @@ const SpaceWarpCanvas = () => {
           var cos = Math.cos(radians)
           var sin = Math.sin(radians)
 
-          ;(star.x =
-            cos * (star.ox - center.x) + sin * (star.oy - center.y) + center.x),
-            (star.y =
-              cos * (star.oy - center.y) -
-              sin * (star.ox - center.x) +
-              center.y)
+            ; (star.x =
+              cos * (star.ox - center.x) + sin * (star.oy - center.y) + center.x),
+              (star.y =
+                cos * (star.oy - center.y) -
+                sin * (star.ox - center.x) +
+                center.y)
         }
       }
 

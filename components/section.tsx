@@ -11,7 +11,7 @@ export const IntroSection = () => {
   return (
     <>
       <div className="relative group w-[200px] h-[200px] mb-8">
-        <div className="absolute cursor-pointer w-full h-full border-2 rounded-full ring-2 ring-emerald-500 transition-opacity duration-300 group-hover:ring-0">
+        <div className="absolute cursor-pointer w-full h-full border-2 rounded-full transition-opacity duration-300 group-hover:ring-0">
           <Image
             src={"https://pbs.twimg.com/profile_images/1843680446153891840/j30OfHJQ_400x400.jpg"}
             className="rounded-full object-cover cursor-pointer"
@@ -76,13 +76,15 @@ export const ProjectSection = () => {
         </div>
         {PersonalProjectData.map((project: ProjectData) => {
           return (
-            <div className="mt-8">
+            <div
+              onClick={() => window.open(project.titleLink, "_blank")}
+              className="mt-8 base-card p-4 rounded-3xl cursor-pointer bg-opacity-50 backdrop-blur-md">
               <Link
                 href={project.titleLink}
                 target="_blank"
                 className="text-white hover:underline hover:font-medium"
               >
-                <div className="mt-6 text-md font-medium text-white">
+                <div className="text-md font-medium text-white">
                   {project.title}
                 </div>
               </Link>
@@ -97,76 +99,78 @@ export const ProjectSection = () => {
               {/* // show all the hastags */}
               <div className="text-md text-gray-500 mt-1 space-x-1">
                 {project.hastags.map((tag: string) => {
-                  return <Badge variant="outline">#{tag}</Badge>
+                  return <Badge variant="outline" className="base-card">#{tag}</Badge>
                 })}
               </div>
             </div>
           )
         })}
 
-        <div className="text-white   text-md mt-6 underline font-medium">
-          Projects I have built working with companies
-        </div>
-        <div className="text-gray-500  text-md hover:none mt-2">
-          <div className="mb-2">
-            Currently working with{" "}
-            <Link
-              className="text-white  hover:underline hover:font-medium"
-              href="https://securly.com/"
-            >
-              Securly
-            </Link>
-            , building the core extension products to save kids life. Also
-            working on migrating the backend to Golang along with many other
-            feature development and tech debts. <br />
+        <div className="base-card p-4 rounded-3xl bg-opacity-50 backdrop-blur-md mt-6">
+          <div className="text-white text-md underline font-medium">
+            Projects I have built working with companies
           </div>
-          Built{" "}
-          <Link
-            href="https://www.velocity.in/payments"
-            className="text-white  hover:underline hover:font-medium"
-          >
-            Payments
-          </Link>{" "}
-          (An app used for making payments, vendor management, Invoice
-          managemenet etc) from scratch and{" "}
-          <Link
-            href="velocity.in/revenue-based-financing/"
-            className="text-white  hover:underline hover:font-medium"
-          >
-            Finance
-          </Link>{" "}
-          (Loan management system) while working with{" "}
-          <Link
-            href="https://www.velocity.in/"
-            className="text-white  hover:underline hover:font-medium"
-          >
-            Velocity.
-          </Link>{" "}
-          Worked mainly on the frontend side in{" "}
-          <span className="font-medium">
-            react, microfrontends, monorepos and typescript.
-          </span>
-        </div>
+          <div className="text-gray-500  text-md hover:none mt-2">
+            <div className="mb-2">
+              Currently working with{" "}
+              <Link
+                className="text-white  hover:underline hover:font-medium"
+                href="https://securly.com/"
+              >
+                Securly
+              </Link>
+              , building the core extension products to save kids life. Also
+              working on migrating the backend to Golang along with many other
+              feature development and tech debts. <br />
+            </div>
+            Built{" "}
+            <Link
+              href="https://www.velocity.in/payments"
+              className="text-white  hover:underline hover:font-medium"
+            >
+              Payments
+            </Link>{" "}
+            (An app used for making payments, vendor management, Invoice
+            managemenet etc) from scratch and{" "}
+            <Link
+              href="velocity.in/revenue-based-financing/"
+              className="text-white  hover:underline hover:font-medium"
+            >
+              Finance
+            </Link>{" "}
+            (Loan management system) while working with{" "}
+            <Link
+              href="https://www.velocity.in/"
+              className="text-white  hover:underline hover:font-medium"
+            >
+              Velocity.
+            </Link>{" "}
+            Worked mainly on the frontend side in{" "}
+            <span className="font-medium">
+              react, microfrontends, monorepos and typescript.
+            </span>
+          </div>
 
-        <div className="text-gray-500  mt-2 text-md hover:none">
-          Built{" "}
-          <Link
-            href="https://www.paletteedu.org/"
-            className="text-white  hover:underline hover:font-medium"
-          >
-            Palette
-          </Link>{" "}
-          (university management app) from scratch and and many other projects
-          while working with{" "}
-          <Link
-            href="https://webknot.in/"
-            className="text-white  hover:underline hover:font-medium"
-          >
-            Webknot.
-          </Link>{" "}
-          Worked on the backend as well as frontend side in{" "}
-          <span className="font-medium">react, node(nest.js), AWS. </span>
-          Built the service and managed deployment as well as the infrastucture.
+          <div className="text-gray-500  mt-2 text-md hover:none">
+            Built{" "}
+            <Link
+              href="https://www.paletteedu.org/"
+              className="text-white  hover:underline hover:font-medium"
+            >
+              Palette
+            </Link>{" "}
+            (university management app) from scratch and and many other projects
+            while working with{" "}
+            <Link
+              href="https://webknot.in/"
+              className="text-white  hover:underline hover:font-medium"
+            >
+              Webknot.
+            </Link>{" "}
+            Worked on the backend as well as frontend side in{" "}
+            <span className="font-medium">react, node(nest.js), AWS. </span>
+            Built the service and managed deployment as well as the infrastucture.
+          </div>
         </div>
       </div>
       {/* <hr className="mt-12" /> */}
