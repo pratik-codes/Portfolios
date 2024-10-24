@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -9,6 +10,12 @@ import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 
 export function FloatingNav({ addClass }: any) {
+  const [scale, setScale] = useState(1.1)
+
+  const changeScale = (scale: number) => {
+    setScale(scale)
+  }
+
   return (
     <motion.header
       className={`${addClass} z-[100] min-w-fit w-11/12 md:w-7/12 lg:w-3/12 mx-auto mb-4 bg-black base-card border-base rounded-full`}
@@ -18,7 +25,7 @@ export function FloatingNav({ addClass }: any) {
       transition={{ type: 'spring', stiffness: 300, damping: 50 }}
       variants={{
         initial: { scale: 1 },
-        hover: { scale: 1.1 }
+        hover: { scale: scale }
       }}
     >
       <div className="mx-2 my-1 flex items-center sm:justify-between">
@@ -42,32 +49,35 @@ export function FloatingNav({ addClass }: any) {
             />
           </motion.div>
         </Link>
-        <MainNav />
+        <MainNav changeScale={changeScale} />
         <div className="ml-8 flex flex-1 items-center justify-end">
-          <nav className="flex items-center">
-            <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
+          <nav className="flex items-center"> <Link
+            onMouseEnter={() => changeScale(1.2)}
+            onMouseLeave={() => changeScale(1.1)}
+            href={siteConfig.links.github}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <motion.div
+              initial="initial"
+              whileHover="hover"
+              animate="initial"
+              variants={{
+                initial: { scale: 1 },
+                hover: { scale: 1.2 },
+                exit: { scale: 1 }
+              }}
+              className={
+                "p-2 rounded-full hover:bg-transparent-white transition-all dark:hover:text-neutral-200 flex align-middle"
+              }
             >
-              <motion.div
-                initial="initial"
-                whileHover="hover"
-                animate="initial"
-                variants={{
-                  initial: { scale: 1 },
-                  hover: { scale: 1.2 },
-                  exit: { scale: 1 }
-                }}
-                className={
-                  "p-2 rounded-full hover:bg-transparent-white transition-all dark:hover:text-neutral-200 flex align-middle"
-                }
-              >
-                <Icons.gitHub className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </motion.div>
-            </Link>
+              <Icons.gitHub className="h-5 w-5" />
+              <span className="sr-only">GitHub</span>
+            </motion.div>
+          </Link>
             <Link
+              onMouseEnter={() => changeScale(1.2)}
+              onMouseLeave={() => changeScale(1.1)}
               href={siteConfig.links.twitter}
               target="_blank"
               rel="noreferrer"
@@ -81,7 +91,6 @@ export function FloatingNav({ addClass }: any) {
                   hover: { scale: 1.2 },
                   exit: { scale: 1 }
                 }}
-
                 className={
                   "p-2 rounded-full hover:bg-transparent-white transition-all dark:hover:text-neutral-200 flex align-middle"
                 }
@@ -91,6 +100,8 @@ export function FloatingNav({ addClass }: any) {
               </motion.div>
             </Link>
             <Link
+              onMouseEnter={() => changeScale(1.2)}
+              onMouseLeave={() => changeScale(1.1)}
               href={siteConfig.links.linkedin}
               target="_blank"
               rel="noreferrer"
@@ -112,7 +123,6 @@ export function FloatingNav({ addClass }: any) {
                 <span className="sr-only">Linkedin</span>
               </motion.div>
             </Link>
-
             {/* <ThemeToggle /> */}
           </nav>
         </div>

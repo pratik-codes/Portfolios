@@ -6,8 +6,10 @@ import { useState, useEffect } from "react"
 
 const TabsComponent = ({
   tabs,
+  changeScale
 }: {
   tabs: Array<{ id: string; label: string }>
+  changeScale: (scale: number) => void
 }) => {
   const pathname = usePathname()
   const getDefaultState = () => {
@@ -27,6 +29,8 @@ const TabsComponent = ({
     <div className="flex space-x-0">
       {tabs.map((tab) => (
         <button
+          onMouseEnter={() => changeScale(1.2)}
+          onMouseLeave={() => changeScale(1.1)}
           onClick={() => {
             setActiveTab(tab.id)
             router.push(`/${tab.id}`)
