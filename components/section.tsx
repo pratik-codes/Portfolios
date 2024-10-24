@@ -48,7 +48,7 @@ export const IntroSection = () => {
         and{" "}
         <Link
           className="text-white hover:underline hover:font-medium"
-          href="https://dashlit.com"
+          href="https://dashlit.byarclabs.com"
           target="_blank"
         >
           dashlit.com
