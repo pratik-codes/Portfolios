@@ -29,7 +29,10 @@ export function FloatingNav({ addClass }: any) {
       }}
     >
       <div className="mx-2 my-1 flex items-center sm:justify-between">
-        <Link href="/">
+        <Link
+          onMouseEnter={() => changeScale(1.2)}
+          onMouseLeave={() => changeScale(1.1)}
+          href="/">
           <motion.div
             initial="initial"
             whileHover="hover"
