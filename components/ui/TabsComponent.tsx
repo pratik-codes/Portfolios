@@ -14,15 +14,14 @@ const TabsComponent = ({
     const activeTab = tabs.find((tab) => pathname.includes(tab.label))
     return activeTab?.id ?? tabs[0].id
   }
-
   const [activeTab, setActiveTab] = useState(() => getDefaultState())
   const router = useRouter()
 
   useEffect(() => {
-    if (window.location.pathname === "/") {
-      setActiveTab("")
+    if (pathname === "/") {
+      setActiveTab("");
     }
-  }, [window.location.pathname])
+  }, [pathname]);
 
   return (
     <div className="flex space-x-0">
