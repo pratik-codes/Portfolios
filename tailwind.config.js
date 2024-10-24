@@ -6,6 +6,18 @@ module.exports = {
   content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   theme: {
     keyframes: {
+      ripple: {
+        "0%, 100%": {
+          transform: "translate(-50%, -50%) scale(1)",
+        },
+        "50%": {
+          transform: "translate(-50%, -50%) scale(0.9)",
+        },
+      },
+      buttonheartbeat: {
+        '0%, 100%': { transform: 'scale(1)' },
+        '50%': { transform: 'scale(1.1)' },
+      },
       "fade-in": {
         from: { opacity: 0, transform: "translateY(-10px)" },
         to: { opacity: 1, transform: "none" },
@@ -62,6 +74,9 @@ module.exports = {
       },
     },
     animation: {
+      ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
+      'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      buttonheartbeat: 'buttonheartbeat 2s ease-in-out infinite',
       "fade-in": "fade-in 1000ms var(--animation-delay, 0ms) ease forwards",
       "image-rotate": "image-rotate 1400ms ease forwards",
       "image-glow": "image-glow 4100ms 600ms ease-out forwards",
@@ -145,6 +160,14 @@ module.exports = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       keyframes: {
+        pulse: {
+          '0%, 100%': {
+            opacity: '1'
+          },
+          '50%': {
+            opacity: '.5'
+          },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },

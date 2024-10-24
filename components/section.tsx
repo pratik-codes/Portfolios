@@ -8,26 +8,32 @@ import { PersonalProjectData, ProjectData } from "@/utils/data"
 import { Icons } from "@/components/icons"
 
 import { Badge } from "./ui/badge"
+import PulseAvatar from "./custom/pulse-avatar"
 
 export const IntroSection = () => {
   return (
     <>
-      <div className="relative group w-[200px] h-[200px] mb-8">
-        <div className="absolute cursor-pointer w-full h-full border-2 rounded-full transition-opacity duration-300 group-hover:ring-0">
-          <Image
-            src={"https://pbs.twimg.com/profile_images/1843680446153891840/j30OfHJQ_400x400.jpg"}
-            className="rounded-full object-cover cursor-pointer"
-            layout="fill" // Ensures the image fills the container while maintaining aspect ratio
-            alt="avatar_picture"
-          />
+      <div className="relative group w-[180px] h-[180px] mb-8">
+
+        <div className="absolute cursor-pointer w-full h-full rounded-full transition-opacity duration-300 group-hover:ring-0">
+          <PulseAvatar>
+            <Image
+              src={"https://pbs.twimg.com/profile_images/1843680446153891840/j30OfHJQ_400x400.jpg"}
+              className="rounded-full object-cover cursor-pointer"
+              layout="fill" // Ensures the image fills the container while maintaining aspect ratio
+              alt="avatar_picture"
+            />
+          </PulseAvatar>
         </div>
-        <Image
-          src={"/assets/profile-pic.jpg"}
-          className="absolute rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 object-cover"
-          layout="fill" // Ensures the image fills the container while maintaining aspect ratio
-          alt="profile_picture"
-        />
-      </div>
+        <PulseAvatar>
+          <Image
+            src={"/assets/profile-pic.jpg"}
+            className="absolute rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 object-cover"
+            layout="fill" // Ensures the image fills the container while maintaining aspect ratio
+            alt="profile_picture"
+          />
+        </PulseAvatar>
+      </div >
       <div className="text-3xl text-white font-extrabold">
         Hey, I'm Pratik{" "}
         <span className="animate-shake">

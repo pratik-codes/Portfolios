@@ -80,3 +80,6 @@
 .base-card {
   @apply bg-black bg-opacity-50 backdrop-blur-md border border-[rgba(209,67,9,0.3)] shadow-[inset_0_-20px_80px_-20px_#FF57221f];
 }
+
+.pulse-bg {
+}
