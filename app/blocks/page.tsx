@@ -14,7 +14,7 @@ const Blocks = () => {
       </div>
 
       <div className="mt-8">
-        <BaseCard>
+        <BaseCard codeLink={"https://github.com/pratik-codes/React-Portfolios/blob/master/components/floating-nav.tsx"}>
           <FloatingNav addClass="mt-12" />
         </BaseCard>
       </div>

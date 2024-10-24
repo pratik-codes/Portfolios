@@ -1,3 +1,5 @@
+"use client"
+
 import { motion } from "framer-motion"
 import { usePathname, useRouter } from "next/navigation"
 import { useState, useEffect } from "react"
