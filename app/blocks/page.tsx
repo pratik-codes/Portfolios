@@ -4,6 +4,7 @@ import BaseCard from "@/components/custom/base-card"
 import PulseAvatar from "@/components/custom/pulse-avatar"
 import { FloatingNav } from "@/components/floating-nav"
 import Image from "next/image"
+import { siteConfig } from "@/config/site"
 
 const Blocks = () => {
   return (
@@ -23,7 +24,7 @@ const Blocks = () => {
         <BaseCard blockName="Pulse Avatar" codeLink={"https://github.com/pratik-codes/React-Portfolios/blob/master/components/custom/pulse-avatar.tsx"}>
           <PulseAvatar>
             <Image
-              src={"https://pbs.twimg.com/profile_images/1843680446153891840/j30OfHJQ_400x400.jpg"}
+              src={siteConfig.avatar_image}
               className="rounded-full object-cover cursor-pointer"
               layout="fill" // Ensures the image fills the container while maintaining aspect ratio
               alt="avatar_picture"

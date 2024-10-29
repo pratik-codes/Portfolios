@@ -9,6 +9,7 @@ import { Icons } from "@/components/icons"
 
 import { Badge } from "./ui/badge"
 import PulseAvatar from "./custom/pulse-avatar"
+import { siteConfig } from "@/config/site"
 
 export const IntroSection = () => {
   return (
@@ -18,7 +19,7 @@ export const IntroSection = () => {
         <div className="absolute cursor-pointer w-full h-full rounded-full transition-opacity duration-300 group-hover:ring-0">
           <PulseAvatar>
             <Image
-              src={"https://pbs.twimg.com/profile_images/1843680446153891840/j30OfHJQ_400x400.jpg"}
+              src={siteConfig.avatar_image}
               className="rounded-full object-cover cursor-pointer"
               layout="fill" // Ensures the image fills the container while maintaining aspect ratio
               alt="avatar_picture"

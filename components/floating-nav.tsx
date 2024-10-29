@@ -46,7 +46,7 @@ export function FloatingNav({ addClass }: any) {
             <Image
               width={30}
               height={30}
-              src={"https://pbs.twimg.com/profile_images/1843680446153891840/j30OfHJQ_400x400.jpg"}
+              src={siteConfig.avatar_image}
               className="rounded-full object-cover cursor-pointer mr-2"
               alt="avatar_picture"
             />
