@@ -9,6 +9,7 @@ const nextConfig = {
       "media.licdn.com",
       "miro.medium.com",
       "dev-to-uploads.s3.amazonaws.com",
+      "avatars.githubusercontent.com",
     ],
   },
   reactStrictMode: true,
