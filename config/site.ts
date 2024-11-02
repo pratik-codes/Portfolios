@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Pratik",
   description:
     "Love to build coooool things.",
-  avatar_image: "https://pbs.twimg.com/profile_images/1851277505140809728/UNKo6b1b_400x400.jpg",
+  avatar_image: "https://avatars.githubusercontent.com/u/64960569?v=4",
   mainNav: [
     {
       title: "Home",
