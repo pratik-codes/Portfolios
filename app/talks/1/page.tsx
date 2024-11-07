@@ -5,7 +5,7 @@ import React from 'react'
 const Talk1 = () => {
   return (
        <div>
-          <TalkDetails params={{ id: '2' }} />
+          <TalkDetails params={{ id: '1' }} />
     </div>
   )
 }

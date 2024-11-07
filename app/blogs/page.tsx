@@ -5,10 +5,10 @@ import Link from 'next/link'
 
 const Blogs = () => {
   return (
-    <div className='mb-[5rem] overflow-y-auto h-screen'>
+    <div className='overflow-y-auto h-screen'>
       <Navbar />
       {/* Professional */}
-      <div className='p-3 mb-[3rem]'>
+      <div className='p-3 mb-[20rem]'>
       <p className="text-[#00ff00] crt-text text-3xl font-bold mt-[4rem]">BLOGS</p>
       <hr className="border border-[#00ff00] mb-4" />
       <div className="border border-[#00ff00]">

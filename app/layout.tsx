@@ -29,7 +29,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
       <div className="crt-overlay"></div>
-        {/* navbar */}
         {children}
       </body>
     </html>

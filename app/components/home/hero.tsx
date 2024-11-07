@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Home() {
 
   return (
-    <div className="w-full text-[#00ff00] font-mono relative overflow-hidden p-2 mb-10">
+    <div className="w-full text-[#00ff00] font-mono relative overflow-hidden p-2 mb-[20rem]">
       {/* Header */}
       <header className="mt-[4rem]">
         <h1 className="text-4xl lg:text-4xl font-bold crt-text">PRATIK TIWARI</h1>

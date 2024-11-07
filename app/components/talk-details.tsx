@@ -20,7 +20,7 @@ async function TalkDetails(
 
      return (
           <div className="min-h-screen text-[#00ff00] overflow-y-auto h-screen">
-               <main className="p-4 md:p-6 mx-auto mt-[4rem]">
+               <main className="p-4 md:p-6 mx-auto mt-[4rem] mb-[20rem]">
                     {/* Back Button */}
                     <Link
                          href="/talks"
