@@ -6,10 +6,10 @@ import Image from 'next/image';
 
 const Talks = () => {
   return (
-    <div className='mb-[5rem] overflow-y-auto h-screen'>
+    <div className='mb-[3rem] overflow-y-auto h-screen'>
       <Navbar />
       {/* Professional */}
-      <div className='p-3 mb-[3rem]'>
+      <div className='p-3 mb-[20rem]'>
         <p className="text-[#00ff00] crt-text text-3xl font-bold mt-[4rem]">TALKS</p>
         <hr className="border border-[#00ff00] mb-4" />
         
