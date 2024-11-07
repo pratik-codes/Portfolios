@@ -1,18 +1,11 @@
-"use client"
-
 import { PortfolioData } from '@/app/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 
-interface TalksPageProps {
-     params: {
-          id: string;
-     };
-}
 
-const TalkDetails: React.FC<TalksPageProps> = ({ params }) => {
+async function TalkDetails(
+     { params }: { params: { id: string } }){
      const talk = PortfolioData.Talks.find((talk) => talk.id === params.id);
 
      if (!talk) {
@@ -98,8 +91,7 @@ const TalkDetails: React.FC<TalksPageProps> = ({ params }) => {
                          </div>
                     )}
 
-                    {/* External Link */}
-                    {talk.link && (
+                    {/* {talk.link && (
                          <div className="border border-[#00ff00] p-4">
                               <h2 className="text-xl font-bold crt-text mb-4">Resources</h2>
                               <Link
@@ -110,7 +102,7 @@ const TalkDetails: React.FC<TalksPageProps> = ({ params }) => {
                                    View presentation slides and materials
                               </Link>
                          </div>
-                    )}
+                    )} */}
                </main>
           </div>
      );
