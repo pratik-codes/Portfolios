@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mono: ['JetBrains Mono', 'monospace'], // Add JetBrains Mono as the primary monospace font
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
