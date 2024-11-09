@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { PortfolioData } from "@/app/lib/data"
 import Link from "next/link"
 import Image from "next/image"
-import { Terminal } from 'lucide-react'
 
 export default function Component() {
   const [typedGreeting, setTypedGreeting] = useState('')
