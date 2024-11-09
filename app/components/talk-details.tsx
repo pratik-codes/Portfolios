@@ -1,111 +1,142 @@
+'use client'
+
+import { useEffect, useState } from 'react';
 import { PortfolioData } from '@/app/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Terminal } from 'lucide-react';
 
+export default function TalkDetails({ params }: { params: { id: string } }) {
+  const [cursorVisible, setCursorVisible] = useState(true);
+  const [typedTitle, setTypedTitle] = useState('');
 
-async function TalkDetails(
-     { params }: { params: { id: string } }){
-     const talk = PortfolioData.Talks.find((talk) => talk.id === params.id);
+  const talk = PortfolioData.Talks.find((talk) => talk.id === params.id);
 
-     if (!talk) {
-          return (
-               <div className="min-h-screen text-[#00ff00] overflow-y-auto">
-                    <main className="p-4 md:p-6 max-w-4xl mx-auto mt-[4rem]">
-                         <div className="crt-text text-[#008800]">Talk not found</div>
-                    </main>
-               </div>
-          );
-     }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCursorVisible(v => !v)
+    }, 500)
+    return () => clearInterval(interval)
+  }, [])
 
-     return (
-          <div className="min-h-screen text-[#00ff00] overflow-y-auto h-screen">
-               <main className="p-4 md:p-6 mx-auto mt-[4rem] mb-[20rem]">
-                    {/* Back Button */}
-                    <Link
-                         href="/talks"
-                         className="mb-8 inline-flex items-center crt-text hover:text-[#008800]"
-                    >
-                         <ArrowLeft className="mr-2 h-4 w-4" />
-                         <span>Back to Talks</span>
-                    </Link>
+  useEffect(() => {
+    if (talk) {
+      let i = 0
+      const typingInterval = setInterval(() => {
+        setTypedTitle(talk.title.slice(0, i))
+        i++
+        if (i > talk.title.length) clearInterval(typingInterval)
+      }, 50)
+      return () => clearInterval(typingInterval)
+    }
+  }, [talk])
 
-                    {/* Title Section */}
-                    <div className="mb-8">
-                         <h1 className="lg:text-2xl md:text-3xl font-bold crt-text mb-4">{talk.title}</h1>
-                         <hr className="border border-[#00ff00] mb-4" />
-                         <div className="lg:flex items-center gap-4 mb-4">
-                              <Image
-                                   src={talk.logoImage}
-                                   alt={`${talk.place} logo`}
-                                   width={50}
-                                   height={50}
-                              />
-                              <div>
-                                   <span className="crt-text text-[#008800]">{talk.place}</span>
-                                   <p className="crt-text text-[#008800]">{talk.content_des}</p>
-                              </div>
-                         </div>
-                    </div>
-
-                    {/* Images Grid */}
-                    <div className="mb-8">
-                         <h2 className="text-xl font-bold crt-text mb-4">Event Images</h2>
-                         <div className="grid grid-cols-1 md:grid-cols-2 border border-[#00ff00]">
-                              {talk.images.map((image, index) => (
-                                   <div 
-                                        key={index} 
-                                        className="relative w-full overflow-hidden border border-[#008800]"
-                                        style={{ paddingTop: '56.25%' }} // 16:9 aspect ratio
-                                   >
-                                        <Image
-                                             src={image}
-                                             alt={`Talk image ${index + 1}`}
-                                             layout="fill"
-                                             objectFit="cover"
-                                             className="absolute top-0 left-0 w-full h-full"
-                                        />
-                                   </div>
-                              ))}
-                         </div>
-                    </div>
-
-                    {/* Twitter Embeds */}
-                    {talk.twitter_embeds.length > 0 && (
-                         <div className="mb-8">
-                              <h2 className="text-xl font-bold crt-text mb-4">Twitter Highlights</h2>
-                              <hr className="border border-[#00ff00] mb-4" />
-                              <ul>
-                                   {talk.twitter_embeds.map((embedId, index) => (
-                                        <li key={index} className="mb-4">
-                                             <Link
-                                                  href={`https://twitter.com/i/web/status/${embedId}`}
-                                                  target="_blank"
-                                                  className="crt-text hover:text-[#008800] underline"
-                                             >
-                                                  View Tweet
-                                             </Link>
-                                        </li>
-                                   ))}
-                              </ul>
-                         </div>
-                    )}
-
-                    {/* {talk.link && (
-                         <div className="border border-[#00ff00] p-4">
-                              <h2 className="text-xl font-bold crt-text mb-4">Resources</h2>
-                              <Link
-                                   href={talk.link}
-                                   target="_blank"
-                                   className="crt-text hover:text-[#008800] underline"
-                              >
-                                   View presentation slides and materials
-                              </Link>
-                         </div>
-                    )} */}
-               </main>
+  if (!talk) {
+    return (
+      <div className="min-h-screen p-4 text-green-500 font-mono">
+        <div className="max-w-6xl mx-auto my-16">
+          <div className="flex items-center space-x-2 text-sm mb-4">
+            <span className="text-green-400">$</span>
+            <span className="animate-pulse">Error: Talk not found</span>
           </div>
-     );
-};
+        </div>
+      </div>
+    );
+  }
 
-export default TalkDetails;
+  return (
+    <div className="min-h-screen p-4 text-green-500 font-mono">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-center space-x-2 text-sm mb-8 mt-16">
+          <Link
+            href="/talks"
+            className="flex items-center hover:text-green-400 transition-colors"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            <span>cd /talks</span>
+          </Link>
+        </div>
+
+        <div className="mb-8">
+          <div className="flex items-center space-x-2 text-sm mb-8">
+            <span className="text-green-400">$</span>
+            <span className="animate-pulse">cat talk_details.txt</span>
+          </div>
+
+          <div className="mb-8">
+            <h1 className="text-xl mb-4">{typedTitle}{cursorVisible ? '█' : ' '}</h1>
+
+            <div className="border border-green-500 p-4 mb-8">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="relative w-12 h-12 flex-shrink-0">
+                  <Image
+                    src={talk.logoImage}
+                    alt={`${talk.place} logo`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <div className="font-bold">{talk.place}</div>
+                  <div className="text-green-400">{talk.content_des}</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <div className="flex items-center space-x-2 mb-4">
+                <Terminal size={16} />
+                <span className="text-xl">Event Images</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border border-green-500 p-4">
+                {talk.images.map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative w-full border border-green-500/50"
+                    style={{ paddingTop: '56.25%' }}
+                  >
+                    <Image
+                      src={image}
+                      alt={`Talk image ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {talk.twitter_embeds.length > 0 && (
+              <div className="mb-8">
+                <div className="flex items-center space-x-2 mb-4">
+                  <Terminal size={16} />
+                  <span className="text-xl">Twitter Highlights</span>
+                </div>
+                <div className="border border-green-500 p-4">
+                  <ul className="space-y-2">
+                    {talk.twitter_embeds.map((embedId, index) => (
+                      <li key={index}>
+                        <span className="text-green-400">$</span>
+                        <Link
+                          href={`https://twitter.com/i/web/status/${embedId}`}
+                          target="_blank"
+                          className="ml-2 hover:text-green-400 transition-colors"
+                        >
+                          open tweet_{index + 1}.url
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="text-sm">
+          $ Terminal v2.0.24 {cursorVisible ? '█' : ' '}
+        </div>
+      </div>
+    </div>
+  );
+}

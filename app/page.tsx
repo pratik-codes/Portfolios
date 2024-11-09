@@ -12,7 +12,7 @@ export default function Home() {
     // Set a timeout of 5 seconds before hiding the loading screen and showing the Hero section
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 6000); // 5000ms = 5 seconds
+    }, 4000); // 5000ms = 5 seconds
 
     // Clean up the timeout in case the component is unmounted before the timer ends
     return () => clearTimeout(timer);

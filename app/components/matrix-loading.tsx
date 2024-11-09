@@ -59,7 +59,7 @@ export default function MatrixLoading() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setHackingComplete(true)
-    }, 3000)
+    }, 2000)
 
     return () => clearTimeout(timer)
   }, [])

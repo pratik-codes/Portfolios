@@ -1,74 +1,110 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import { PortfolioData } from "@/app/lib/data"
 import Link from "next/link"
+import Image from "next/image"
+import { Terminal } from 'lucide-react'
 
-export default function Home() {
+export default function Component() {
+  const [typedGreeting, setTypedGreeting] = useState('')
+  const [cursorVisible, setCursorVisible] = useState(true)
+
+  useEffect(() => {
+    let i = 0
+    const typingInterval = setInterval(() => {
+      setTypedGreeting(PortfolioData.greeting.slice(0, i))
+      i++
+      if (i > PortfolioData.greeting.length) clearInterval(typingInterval)
+    }, 100)
+
+    return () => clearInterval(typingInterval)
+  }, [])
+
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setCursorVisible(v => !v)
+    }, 500)
+
+    return () => clearInterval(cursorInterval)
+  }, [])
 
   return (
-    <div className="w-full text-[#00ff00] font-mono relative overflow-hidden p-2 mb-[20rem]">
-      {/* Header */}
-      <header className="mt-[4rem]">
-        <div>
+    <div className="text-green-500 font-mono flex justify-center max-w-6xl  mx-auto min-h-screen p-4">
+      <div className="mt-6 w-full">
+        <div className="mb-4 flex items-center space-x-2 text-sm">
+          <span className="text-green-400">$</span>
+          <span className="animate-pulse">whoami</span>
         </div>
-        <div>
-          <h1 className="text-4xl lg:text-4xl font-bold crt-text mb-2">Pratik</h1>
-          <p className="crt-text text-xl">Fullstack Software Engineer</p>
-          <div className="mb-4 flex space-x-2 text-[0.1rem]">
-            {PortfolioData.links.map((social, index) => (
-              <Link target="_blank" href={social.url} key={index} className="text-[1.02rem] crt-text text-[#0ff] underline text-lg hover:text-[#b4f9f8]">{social.name}<br /></Link>
-            ))}
+
+        <div className="flex flex-col md:flex-row gap-8 lg:items-center">
+          <div className="w-48 h-48 relative flex-shrink-0 image-container">
+            <Image
+              src="https://avatars.githubusercontent.com/u/64960569?s=400&u=7895fdab7327511189a670d31846a48ea8f50f95&v=4"
+              alt="Profile avatar"
+              width={192}
+              height={192}
+              className="w-full h-full object-cover grayscale-image"
+            />
+            <div className="green-overlay"></div>
           </div>
-          <div className="crt-text text-lg">
-            {PortfolioData.about.map((line, index) => (
-              <p key={index} className="mb-5">{line}<br /></p>
-            ))}
+
+          <div className="flex-1">
+            <h1 className="text-2xl mb-4">
+              {typedGreeting}
+              <span className={cursorVisible ? 'opacity-100 ml-1' : 'opacity-0'}>█</span>
+            </h1>
+            <div className="mb-6 space-y-2">
+              {PortfolioData.links.map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  className="block text-green-500 hover:text-green-400"
+                >
+                  {/* <Terminal className="inline-block mr-2" size={16} /> */}
+                  [
+                  <span className="underline">
+                    {social.name}
+                  </span>
+                  ]
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-     </header>
 
-      {/* Professional */}
-      <p className="crt-text text-3xl font-bold mt-[4rem]">PROFESSIONAL PROJECTS</p>
-      <hr className="border border-[#00ff00] mb-4" />
-      <div className="border border-[#00ff00]">
-        {PortfolioData.ProfessionalExperience.map((project, index: number) => (
-          <div key={index} className="w-full hover:bg-zinc-900 p-0 border border-[#008800] p-2">
-            <Link target="_blank" href={project.link} key={index}>
-              <div className="crt-text font-bold">{project.title}</div>
-              <div className="crt-text text-[#008800]">
-                {project.description.map((line, index) => (
-                  <p key={index} className="">{line}<br /></p>
-                ))}
-              </div>
-              <div className="crt-text text-[#00ff00] flex gap-2">
-                {project.stack.map((stack, index) => (
-                  <span key={index} className="">#{stack}<br /></span>
-                ))}
-              </div>
-            </Link>
+        <div className="space-y-6 mt-8 border-t border-green-500/20 pt-6">
+          <div className="mb-4 flex items-center space-x-2 text-sm">
+            <span className="text-green-400">$</span>
+            <span className="animate-pulse">cat about.txt</span>
           </div>
-        ))}
-      </div>
+          {PortfolioData.about.map((line, index) => (
+            <p key={index} className="leading-relaxed">{line}</p>
+          ))}
+        </div>
 
-      {/* Personal */}
-      <p className="crt-text text-3xl font-bold mt-[4rem]">PERSONAL PROJECTS</p>
-      <hr className="border border-[#00ff00] mb-4" />
-      <div className="border border-[#00ff00]">
-        {PortfolioData.PersonalProjects.map((project, index: number) => (
-          <div key={index} className="w-full hover:bg-zinc-900 p-0 border border-[#00ff00] p-2">
-            <Link target="_blank" href={project.link} key={index}>
-              <div className="crt-text font-bold">{project.title}</div>
-              <div className="crt-text text-[#008800]">
-                {project.description.map((line, index) => (
-                  <p key={index} className="">{line}<br /></p>
-                ))}
-              </div>
-              <div className="crt-text text-[#00ff00] flex gap-2">
-                {project.stack.map((stack, index) => (
-                  <span key={index} className="">#{stack}<br /></span>
-                ))}
-              </div>
-            </Link>
+        <div className="mt-8 border-t border-green-500/20 pt-6">
+          <div className="mb-4 flex items-center space-x-2 text-sm">
+            <span className="text-green-400">$</span>
+            <span className="animate-pulse">cat contact.txt</span>
           </div>
-        ))}
+          <h2 className="mb-4">contact me:</h2>
+          <div className="space-y-2">
+            <p>[email: <Link href="mailto:example@domain.com" className="hover:text-green-400">{PortfolioData.contact.email}</Link>]</p>
+            <p>[x: <Link href="https://x.com/username" className="hover:text-green-400">{PortfolioData.contact.twitter}</Link>]</p>
+            <p>[discord: {PortfolioData.contact.discord}]</p>
+          </div>
+        </div>
+
+        <div className="mt-8 border-t border-green-500/20 pt-6">
+          <p>thanks for visiting!</p>
+        </div>
+
+        <div className="mt-4 text-sm">
+          <span className="text-green-400">$</span> Terminal v2.0.24
+          <span className={cursorVisible ? 'opacity-100' : 'opacity-0'}>█</span>
+        </div>
       </div>
     </div>
   )
