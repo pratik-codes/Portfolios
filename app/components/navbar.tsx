@@ -7,20 +7,20 @@ export default function Navbar() {
     <nav className="p-4 lg:px-0 font-mono mb-2 max-w-6xl mx-auto">
       <div className="mx-auto flex items-center gap-2">
         <div className="lg:flex items-center gap-4">
-          <NavItem href="/home" number={0} blank={false}>
-            _home
+          <NavItem href="/home" blank={false}>
+            home
           </NavItem>
-          <NavItem href="/projects" number={1} blank={false}>
-            _projects
+          <NavItem href="/projects" blank={false}>
+            projects
           </NavItem>
-          <NavItem href="/blogs" number={2} blank={false}>
-            _blogs
+          <NavItem href="/blogs" blank={false}>
+            blogs
           </NavItem>
-          <NavItem href="talks" number={3} blank={false}>
-            _talks
+          <NavItem href="talks" blank={false}>
+            talks
           </NavItem>
-          <NavItem href="https://tiwaripratik.com/" number={4} blank={false}>
-            _cool mode
+          <NavItem href="https://tiwaripratik.com/" blank={false}>
+            cool mode
           </NavItem>
         </div>
       </div>
@@ -31,22 +31,22 @@ export default function Navbar() {
 function NavItem({
   children,
   href,
-  number,
   blank = false,
 }: {
   children: React.ReactNode
   href: string
-  number: number
   blank: boolean
 }) {
   return (
     <Link
       target={blank ? "_blank" : "_self"}
       href={href}
-      className={"flex items-center gap-1 text-green-400 transition-colors hover:text-green-500 hover:underline"}
+      className={"flex items-center gap-1 text-green-400 transition-colors hover:text-green-500"}
     >
-      <span className="opacity-50">{number}.</span>
-      {children}
+      <span className="opacity-50">cd</span>
+      <div className="hover:underline">
+        /{children}
+      </div>
     </Link>
   )
 }
