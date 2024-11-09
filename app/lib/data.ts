@@ -46,15 +46,15 @@ export const PortfolioData: PortfolioDataType = {
      ],
      links: [
           {
-               name: "Twitter",
+               name: "[Twitter]",
                url: "https://x.com/pratikcodes_",
           },
           {
-               name: "GitHub",
+               name: "[GitHub]",
                url: "https://github.com/pratik-codes",
           },
          {
-               name: "LinkedIn",
+               name: "[LinkedIn]",
                url: "",
           },
      ],

@@ -11,12 +11,15 @@ export default function Navbar() {
                               _home
                          </NavItem>
                          <NavItem href="/blogs" number={1} blank={false}>
+                            Projects
+                         </NavItem>
+                         <NavItem href="/blogs" number={2} blank={false}>
                               _blogs
                          </NavItem>
-                         <NavItem href="talks" number={2} blank={false}>
+                         <NavItem href="talks" number={3} blank={false}>
                               _talks
                          </NavItem>
-                         <NavItem href="https://tiwaripratik.com/" number={3} blank={false}>
+                         <NavItem href="https://tiwaripratik.com/" number={4} blank={false}>
                               _cool mode
                          </NavItem>
                     </div>

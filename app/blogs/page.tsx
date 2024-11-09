@@ -13,7 +13,7 @@ const Blogs = () => {
       <hr className="border border-[#00ff00] mb-4" />
       <div className="border border-[#00ff00]">
         {PortfolioData.Blogs.map((blog, index: number) => (
-          <div key={index} className="w-full hover:bg-zinc-900 p-0 border border-[#008800] p-2">
+          <div key={index} className="w-full hover:bg-zinc-900 p-0 border border-[#008800]">
             <Link target="_blank" href={blog.url} key={index}>
               <div className="crt-text font-bold text-[#00ff00]">{blog.title}</div>
               <div className="crt-text font-bold text-[#008800]">{blog.description}</div>

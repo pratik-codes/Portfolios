@@ -7,18 +7,21 @@ export default function Home() {
     <div className="w-full text-[#00ff00] font-mono relative overflow-hidden p-2 mb-[20rem]">
       {/* Header */}
       <header className="mt-[4rem]">
-        <h1 className="text-4xl lg:text-4xl font-bold crt-text">PRATIK TIWARI</h1>
-        <p className="crt-text text-xl">Fullstack Software Engineer</p>
-        <div className="mb-4 flex space-x-2 text-[0.1rem]">
-          {PortfolioData.links.map((social, index) => (
-            <Link target="_blank" href={social.url} key={index} className="text-[1.02rem] crt-text text-[#0ff] underline text-lg hover:text-[#b4f9f8]">{social.name}<br /></Link>
-          ))
-          }
+        <div>
         </div>
-        <div className="crt-text text-lg">
-          {PortfolioData.about.map((line, index) => (
-            <p key={index} className="mb-1">{line}<br /></p>
-          ))}
+        <div>
+          <h1 className="text-4xl lg:text-4xl font-bold crt-text mb-2">Pratik</h1>
+          <p className="crt-text text-xl">Fullstack Software Engineer</p>
+          <div className="mb-4 flex space-x-2 text-[0.1rem]">
+            {PortfolioData.links.map((social, index) => (
+              <Link target="_blank" href={social.url} key={index} className="text-[1.02rem] crt-text text-[#0ff] underline text-lg hover:text-[#b4f9f8]">{social.name}<br /></Link>
+            ))}
+          </div>
+          <div className="crt-text text-lg">
+            {PortfolioData.about.map((line, index) => (
+              <p key={index} className="mb-5">{line}<br /></p>
+            ))}
+          </div>
         </div>
      </header>
 
