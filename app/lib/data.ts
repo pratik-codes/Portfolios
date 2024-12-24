@@ -53,8 +53,8 @@ export const PortfolioData: PortfolioDataType = {
   contact: {
     email: "pratiktiwari1212@gmail.com",
     discord: "@pratik-codes",
-    twitter: "https://twitter.com/pratikcodes_",
-    github: "https://github.com/pratik-codes",
+    twitter: "x.com/pratikcodes_",
+    github: "github.com/pratik-codes",
   },
   links: [
     {

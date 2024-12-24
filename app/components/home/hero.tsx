@@ -53,36 +53,40 @@ export default function Component() {
             <h1 className="text-2xl mt-4">
               {typedGreeting}
               <span
-                className={cursorVisible ? "opacity-100 ml-1" : "opacity-0"}
-              >
+                className={cursorVisible ? "opacity-100 ml-1" : "opacity-0"}>
                 █
               </span>
             </h1>
             <div className="mb-6 space-y-2">
               <div className="mt-4 ">
-                {/* <div className="mb-4 flex items-center space-x-2 text-sm"> */}
-                {/*   <span className="text-green-400">$</span> */}
-                {/*   <span className="animate-pulse">cat contact.txt</span> */}
-                {/* </div> */}
                 <div className="space-y-2">
                   <p>
                     [x:{" "}
                     <Link
-                      href="https://x.com/username"
-                      className="hover:text-green-400"
-                    >
+                      target="_blank"
+                      href="https://x.com/pratikcodes_"
+                      className="hover:text-green-400 hover:underline">
                       {PortfolioData.contact.twitter}
                     </Link>
                     ]
                   </p>
                   <p>[discord: {PortfolioData.contact.discord}]</p>
-                  <p>[github: {PortfolioData.contact.github}]</p>
+                  <p>
+                    [github:
+                      {" "}
+                    <Link
+                      target="_blank"
+                      href="https://github.com/pratik-codes/"
+                      className="hover:text-green-400 hover:underline">
+                      {PortfolioData.contact.github}]
+                    </Link>
+                  </p>
                   <p>
                     [email:{" "}
                     <Link
+                      target="_blank"
                       href="mailto:example@domain.com"
-                      className="hover:text-green-400"
-                    >
+                      className="hover:text-green-400 hover:underline">
                       {PortfolioData.contact.email}
                     </Link>
                     ]
