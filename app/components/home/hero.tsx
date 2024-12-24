@@ -1,32 +1,33 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { PortfolioData } from "@/app/lib/data"
-import Link from "next/link"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import { PortfolioData } from "@/app/lib/data";
+import Link from "next/link";
+import Image from "next/image";
+import AsciImage from "@/public/assets/ascii-art.png";
 
 export default function Component() {
-  const [typedGreeting, setTypedGreeting] = useState('')
-  const [cursorVisible, setCursorVisible] = useState(true)
+  const [typedGreeting, setTypedGreeting] = useState("");
+  const [cursorVisible, setCursorVisible] = useState(true);
 
   useEffect(() => {
-    let i = 0
+    let i = 0;
     const typingInterval = setInterval(() => {
-      setTypedGreeting(PortfolioData.greeting.slice(0, i))
-      i++
-      if (i > PortfolioData.greeting.length) clearInterval(typingInterval)
-    }, 100)
+      setTypedGreeting(PortfolioData.greeting.slice(0, i));
+      i++;
+      if (i > PortfolioData.greeting.length) clearInterval(typingInterval);
+    }, 100);
 
-    return () => clearInterval(typingInterval)
-  }, [])
+    return () => clearInterval(typingInterval);
+  }, []);
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
-      setCursorVisible(v => !v)
-    }, 500)
+      setCursorVisible((v) => !v);
+    }, 500);
 
-    return () => clearInterval(cursorInterval)
-  }, [])
+    return () => clearInterval(cursorInterval);
+  }, []);
 
   return (
     <div className="text-green-500 font-mono flex justify-center max-w-6xl  mx-auto min-h-screen p-4">
@@ -39,36 +40,56 @@ export default function Component() {
         <div className="flex flex-col md:flex-row gap-8 lg:items-center">
           <div className="w-48 h-48 relative flex-shrink-0 image-container">
             <Image
+              // src={AsciImage}
               src="https://avatars.githubusercontent.com/u/64960569?s=400&u=7895fdab7327511189a670d31846a48ea8f50f95&v=4"
               alt="Profile avatar"
-              width={192}
-              height={192}
+              width={150}
+              height={150}
               className="w-full h-full object-cover grayscale-image"
             />
             <div className="green-overlay"></div>
           </div>
 
           <div className="flex-1">
-            <h1 className="text-2xl mb-4">
+            <h1 className="text-2xl mt-4">
               {typedGreeting}
-              <span className={cursorVisible ? 'opacity-100 ml-1' : 'opacity-0'}>█</span>
+              <span
+                className={cursorVisible ? "opacity-100 ml-1" : "opacity-0"}
+              >
+                █
+              </span>
             </h1>
             <div className="mb-6 space-y-2">
-              {PortfolioData.links.map((social, index) => (
-                <Link
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  className="block text-green-500 hover:text-green-400"
-                >
-                  {/* <Terminal className="inline-block mr-2" size={16} /> */}
-                  [
-                  <span className="underline">
-                    {social.name}
-                  </span>
-                  ]
-                </Link>
-              ))}
+              <div className="mt-4 ">
+                {/* <div className="mb-4 flex items-center space-x-2 text-sm"> */}
+                {/*   <span className="text-green-400">$</span> */}
+                {/*   <span className="animate-pulse">cat contact.txt</span> */}
+                {/* </div> */}
+                <div className="space-y-2">
+                  <p>
+                    [x:{" "}
+                    <Link
+                      href="https://x.com/username"
+                      className="hover:text-green-400"
+                    >
+                      {PortfolioData.contact.twitter}
+                    </Link>
+                    ]
+                  </p>
+                  <p>[discord: {PortfolioData.contact.discord}]</p>
+                  <p>[github: {PortfolioData.contact.github}]</p>
+                  <p>
+                    [email:{" "}
+                    <Link
+                      href="mailto:example@domain.com"
+                      className="hover:text-green-400"
+                    >
+                      {PortfolioData.contact.email}
+                    </Link>
+                    ]
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -79,21 +100,10 @@ export default function Component() {
             <span className="animate-pulse">cat about.txt</span>
           </div>
           {PortfolioData.about.map((line, index) => (
-            <p key={index} className="leading-relaxed">{line}</p>
+            <p key={index} className="leading-relaxed">
+              {line}
+            </p>
           ))}
-        </div>
-
-        <div className="mt-8 border-t border-green-500/20 pt-6">
-          <div className="mb-4 flex items-center space-x-2 text-sm">
-            <span className="text-green-400">$</span>
-            <span className="animate-pulse">cat contact.txt</span>
-          </div>
-          <h2 className="mb-4">contact me:</h2>
-          <div className="space-y-2">
-            <p>[email: <Link href="mailto:example@domain.com" className="hover:text-green-400">{PortfolioData.contact.email}</Link>]</p>
-            <p>[x: <Link href="https://x.com/username" className="hover:text-green-400">{PortfolioData.contact.twitter}</Link>]</p>
-            <p>[discord: {PortfolioData.contact.discord}]</p>
-          </div>
         </div>
 
         <div className="mt-8 border-t border-green-500/20 pt-6">
@@ -102,9 +112,9 @@ export default function Component() {
 
         <div className="mt-4 text-sm">
           <span className="text-green-400">$</span> Terminal v2.0.24
-          <span className={cursorVisible ? 'opacity-100' : 'opacity-0'}>█</span>
+          <span className={cursorVisible ? "opacity-100" : "opacity-0"}>█</span>
         </div>
       </div>
     </div>
-  )
+  );
 }

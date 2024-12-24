@@ -5,7 +5,8 @@ interface PortfolioDataType {
   contact: {
     email: string;
     discord: string;
-    twitter: string
+    twitter: string;
+    github: string;
   };
   links: {
     name: string;
@@ -43,7 +44,7 @@ interface PortfolioDataType {
 }
 
 export const PortfolioData: PortfolioDataType = {
-  greeting: "hello, i'm pratik",
+  greeting: "Hello, I'm Pratik",
   position: "Fullstack Software Engineer",
   about: [
     "Welcome to my digital lair. I’m a fullstack developer with 4+ years of experience hacking the web, worked into the realms of edtech, AI, finance, and Web3. I specialize in Go, Rust, Next/React, Node, AWS, and Solidity, but my curiosity is infinite—always exploring new tools and tech.",
@@ -52,7 +53,8 @@ export const PortfolioData: PortfolioDataType = {
   contact: {
     email: "pratiktiwari1212@gmail.com",
     discord: "@pratik-codes",
-    twitter: "https://twitter.com/pratikcodes_"
+    twitter: "https://twitter.com/pratikcodes_",
+    github: "https://github.com/pratik-codes",
   },
   links: [
     {
@@ -101,7 +103,7 @@ export const PortfolioData: PortfolioDataType = {
       title: "Securly",
       description: [
         "Currently building the core extension products to save kids' lives by providing web safety and online protection.",
-        "Working on migrating the backend to Golang and addressing tech debts while developing new features."
+        "Working on migrating the backend to Golang and addressing tech debts while developing new features.",
       ],
       stack: ["React", "Golang", "Web Security", "Typescript"],
       link: "https://securly.com/",
@@ -110,7 +112,7 @@ export const PortfolioData: PortfolioDataType = {
       title: "Velocity",
       description: [
         "Built Payments (an app used for making payments, vendor management, invoice management, etc.) from scratch.",
-        "Developed Finance (loan management system) while focusing on frontend development using React, microfrontends, monorepos, and TypeScript."
+        "Developed Finance (loan management system) while focusing on frontend development using React, microfrontends, monorepos, and TypeScript.",
       ],
       stack: ["React", "Microfrontends", "Monorepos", "TypeScript"],
       link: "https://velocity.in/",
@@ -119,11 +121,11 @@ export const PortfolioData: PortfolioDataType = {
       title: "Webknot",
       description: [
         "Built Palette (a university management app) from scratch and worked on numerous other projects.",
-        "Contributed to both the frontend and backend, with React, Node (Nest.js), and AWS. Managed service deployment and infrastructure."
+        "Contributed to both the frontend and backend, with React, Node (Nest.js), and AWS. Managed service deployment and infrastructure.",
       ],
       stack: ["React", "Node.js", "Nest.js", "AWS"],
       link: "https://webknot.com/",
-    }
+    },
   ],
   Talks: [
     {
@@ -132,8 +134,10 @@ export const PortfolioData: PortfolioDataType = {
       logoImage:
         "https://pbs.twimg.com/profile_images/1671952285730238464/SJ9ev-00_400x400.jpg",
       link: "/talks/generics-in-typescript",
-      title: "Mastering Generics in TypeScript: Building Powerful Abstractions and Saying Goodbye to 'Any'",
-      content_des: "Delivered an in-depth talk at React Mumbai on leveraging Generics in TypeScript to create strong, reusable abstractions. Explored how TypeScript’s generics enable more precise typing, helping developers avoid the pitfalls of 'any' and write cleaner, more reliable code.",
+      title:
+        "Mastering Generics in TypeScript: Building Powerful Abstractions and Saying Goodbye to 'Any'",
+      content_des:
+        "Delivered an in-depth talk at React Mumbai on leveraging Generics in TypeScript to create strong, reusable abstractions. Explored how TypeScript’s generics enable more precise typing, helping developers avoid the pitfalls of 'any' and write cleaner, more reliable code.",
       images: [
         "/assets/react_mumbai/REACT_MUMBAI_1.jpeg",
         "/assets/react_mumbai/REACT_MUMBAI_2.jpeg",
@@ -190,7 +194,12 @@ export const PortfolioData: PortfolioDataType = {
       url: "https://blogs.tiwaripratik.com/building-frameworky-things-with-vanilla-react-ssr-file-based-routing-and-server-side-data-fetching",
       imageSrc:
         "https://cdn.hashnode.com/res/hashnode/image/upload/v1690038913340/b09cd745-3103-42f6-9314-b2082c839868.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
-      hastags: ["server-side-rendering", "file-based-routing", "react", "nextjs"],
+      hastags: [
+        "server-side-rendering",
+        "file-based-routing",
+        "react",
+        "nextjs",
+      ],
     },
     {
       title: "Let's talk about react performance ⚛",

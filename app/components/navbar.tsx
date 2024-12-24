@@ -1,6 +1,6 @@
-"use client"
-import Link from "next/link"
-import * as React from "react"
+"use client";
+import Link from "next/link";
+import * as React from "react";
 
 export default function Navbar() {
   return (
@@ -19,13 +19,13 @@ export default function Navbar() {
           <NavItem href="talks" blank={false}>
             talks
           </NavItem>
-          <NavItem href="https://tiwaripratik.com/" blank={false}>
+          <NavItem href="https://cool.tiwaripratik.com/" blank={false}>
             cool mode
           </NavItem>
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
 function NavItem({
@@ -33,20 +33,20 @@ function NavItem({
   href,
   blank = false,
 }: {
-  children: React.ReactNode
-  href: string
-  blank: boolean
+  children: React.ReactNode;
+  href: string;
+  blank: boolean;
 }) {
   return (
     <Link
       target={blank ? "_blank" : "_self"}
       href={href}
-      className={"flex items-center gap-1 text-green-400 transition-colors hover:text-green-500"}
+      className={
+        "flex items-center gap-1 text-green-400 transition-colors hover:text-green-500"
+      }
     >
       <span className="opacity-50">cd</span>
-      <div className="hover:underline">
-        /{children}
-      </div>
+      <div className="hover:underline">/{children}</div>
     </Link>
-  )
+  );
 }
