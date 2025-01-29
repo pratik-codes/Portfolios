@@ -79,7 +79,10 @@ export default function Projects() {
                             </div>
                             <div className="mt-1">
                               {project.stack.map((tag) => (
-                                <span key={tag} className="text-xs mr-2">
+                                <span
+                                  key={tag}
+                                  className="text-xs mr-2 mb-2 px-2 py-1 bg-green-900 text-green-300"
+                                >
                                   #{tag}
                                 </span>
                               ))}
@@ -125,7 +128,10 @@ export default function Projects() {
                           </div>
                           <div className="mt-1">
                             {project.stack.map((tag) => (
-                              <span key={tag} className="text-xs mr-2">
+                              <span
+                                key={tag}
+                                className="text-xs mr-2 mb-2 px-2 py-1 bg-green-900 text-green-300"
+                              >
                                 #{tag}
                               </span>
                             ))}
