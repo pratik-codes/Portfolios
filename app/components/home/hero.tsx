@@ -29,7 +29,7 @@ export default function Component() {
   }, []);
 
   return (
-    <div className="text-green-500 font-mono flex justify-center max-w-6xl  mx-auto min-h-screen p-4">
+    <div className="text-green-500 font-mono flex justify-center max-w-6xl  mx-auto min-h-full p-4">
       <div className="mt-6 w-full">
         <div className="mb-4 flex items-center space-x-2 text-sm">
           <span className="text-green-400">$</span>
@@ -53,7 +53,8 @@ export default function Component() {
             <h1 className="text-2xl mt-4">
               {typedGreeting}
               <span
-                className={cursorVisible ? "opacity-100 ml-1" : "opacity-0"}>
+                className={cursorVisible ? "opacity-100 ml-1" : "opacity-0"}
+              >
                 █
               </span>
             </h1>
@@ -65,19 +66,20 @@ export default function Component() {
                     <Link
                       target="_blank"
                       href="https://x.com/pratikcodes_"
-                      className="hover:text-green-400 hover:underline">
+                      className="hover:text-green-400 hover:underline"
+                    >
                       {PortfolioData.contact.twitter}
                     </Link>
                     ]
                   </p>
                   <p>[discord: {PortfolioData.contact.discord}]</p>
                   <p>
-                    [github:
-                      {" "}
+                    [github:{" "}
                     <Link
                       target="_blank"
                       href="https://github.com/pratik-codes/"
-                      className="hover:text-green-400 hover:underline">
+                      className="hover:text-green-400 hover:underline"
+                    >
                       {PortfolioData.contact.github}]
                     </Link>
                   </p>
@@ -86,7 +88,8 @@ export default function Component() {
                     <Link
                       target="_blank"
                       href="mailto:example@domain.com"
-                      className="hover:text-green-400 hover:underline">
+                      className="hover:text-green-400 hover:underline"
+                    >
                       {PortfolioData.contact.email}
                     </Link>
                     ]

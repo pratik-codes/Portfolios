@@ -10,6 +10,9 @@ export default function Navbar() {
           <NavItem href="/home" blank={false}>
             home
           </NavItem>
+          <NavItem href="/skills" blank={false}>
+            skills
+          </NavItem>
           <NavItem href="/projects" blank={false}>
             projects
           </NavItem>
@@ -18,9 +21,6 @@ export default function Navbar() {
           </NavItem>
           <NavItem href="talks" blank={false}>
             talks
-          </NavItem>
-          <NavItem href="https://cool.tiwaripratik.com/" blank={false}>
-            cool mode
           </NavItem>
         </div>
       </div>
