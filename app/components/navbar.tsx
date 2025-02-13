@@ -4,7 +4,7 @@ import * as React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="p-4 lg:px-0 font-mono mb-2 max-w-6xl mx-auto">
+    <nav className="sticky top-0 z-50 p-4 lg:px-0 font-mono mb-2 max-w-6xl mx-auto border-b border-green-500/20  backdrop-blur-md">
       <div className="mx-auto flex items-center gap-2">
         <div className="lg:flex items-center gap-4">
           <NavItem href="/home" blank={false}>

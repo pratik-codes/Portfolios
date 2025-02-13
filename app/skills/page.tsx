@@ -78,7 +78,7 @@ export default function Skills() {
         </div>
         <div className="mb-8 text-glow">
           <h1 className="text-2xl mb-4 text-green-400">SKILLS</h1>
-          <div className="border border-green-500 scan-lines vignette">
+          <div className="border-[0.5px] border-green-500 scan-lines vignette rounded-lg">
             <table className="w-full">
               <tbody>
                 {skills.map((skillCategory, index) => (
@@ -86,23 +86,23 @@ export default function Skills() {
                     key={index}
                     className={
                       index !== skills.length - 1
-                        ? "border-b border-green-500"
+                        ? "border-b-[0.5px] border-green-500"
                         : ""
                     }
                   >
-                    <td className="p-2 border-r border-green-500 align-top">
+                    <td className="p-2 border-r-[0.5px] border-green-500 align-top w-6">
                       <Terminal size={16} className="text-green-400" />
                     </td>
                     <td className="p-2">
-                      <div className="block hover:bg-green-900/20">
-                        <div className="font-bold text-green-300">
+                      <div className="block hover:bg-green-900/20 rounded-md">
+                        <div className="font-bold text-green-500">
                           {skillCategory.category}
                         </div>
                         <div className="mt-2 flex flex-wrap">
                           {skillCategory.items.map((skill) => (
                             <span
                               key={skill}
-                              className="text-xs mr-2 mb-2 px-2 py-1 bg-green-900 text-green-300"
+                              className="text-xs mr-2 mb-2 px-2 py-1 bg-green-900 text-green-300 rounded-md"
                             >
                               {skill}
                             </span>

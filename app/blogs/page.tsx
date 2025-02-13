@@ -44,16 +44,16 @@ export default function Blogs() {
             </div>
 
             <h1 className="text-2xl mb-4">BLOGS</h1>
-            <div className="border border-green-500">
+            <div className="border-[0.5px] border-green-500 rounded-lg">
               <table className="w-full">
                 <tbody>
                   {PortfolioData.Blogs.map((blog, index) => (
-                    <tr key={index} className={index !== PortfolioData.Blogs.length - 1 ? 'border-b border-green-500' : ''}>
-                      <td className="p-2 border-r border-green-500 align-top">
+                    <tr key={index} className={index !== PortfolioData.Blogs.length - 1 ? 'border-b-[0.5px] border-green-500' : ''}>
+                      <td className="p-2 border-r-[0.5px] border-green-500 align-top">
                         <Terminal size={16} />
                       </td>
                       <td className="p-2">
-                        <Link href={blog.url} target="_blank" className="block hover:bg-green-900/20">
+                        <Link href={blog.url} target="_blank" className="block hover:bg-green-900/20 rounded-md">
                           <div className="font-bold">{blog.title}</div>
                           <div className="text-sm text-green-400">{blog.description}</div>
                         </Link>

@@ -44,15 +44,15 @@ const Talks = () => {
             </div>
 
             <h1 className="text-2xl mb-4">TALKS</h1>
-            <div className="border border-green-500">
+            <div className="border-[0.5px] border-green-500 rounded-lg">
               <div className="w-full">
                 {PortfolioData.Talks.map((talk, index) => (
                   <div
                     key={index}
-                    className={`flex items-start space-x-2 p-2 ${index !== PortfolioData.Talks.length - 1 ? 'border-b border-green-500' : ''} hover:bg-green-900/20`}
+                    className={`flex items-start space-x-2 p-2 ${index !== PortfolioData.Talks.length - 1 ? 'border-b-[0.5px] border-green-500' : ''} hover:bg-green-900/20`}
                   >
-                    <div className="flex-shrink-0">
-                      <Image src={talk.logoImage} alt={talk.title} width={50} height={50} />
+                    <div className="flex-shrink-0 h-full flex justify-center">
+                      <Image src={talk.logoImage} alt={talk.title} width={50} height={50} className='rounded' />
                     </div>
                     <div>
                       <Link href={`/talks/${talk.id}`} className="block">

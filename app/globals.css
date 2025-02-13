@@ -4,12 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --background: rgb(0, 14, 0);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
+    --background: rgb(0, 14, 0);
     --foreground: #ededed;
   }
 }
@@ -18,7 +18,7 @@ body {
   color: var(--foreground);
   font-family: "JetBrains Mono", monospace;
   /*background: black;*/
-  background: #000000;
+  background: rgb(0, 14, 0);
   overflow: auto;
 }
 

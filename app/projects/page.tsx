@@ -48,7 +48,7 @@ export default function Projects() {
 
           <div className="mb-8">
             <h1 className="text-2xl mb-2">PROFESSIONAL PROJECTS</h1>
-            <div className="border border-green-500">
+            <div className="border-[0.5px] border-green-500 rounded-lg">
               <table className="w-full">
                 <tbody>
                   {PortfolioData.ProfessionalExperience.map(
@@ -58,18 +58,18 @@ export default function Projects() {
                         className={
                           index !==
                           PortfolioData.ProfessionalExperience.length - 1
-                            ? "border-b border-green-500"
+                            ? "border-b-[0.5px] border-green-500"
                             : ""
                         }
                       >
-                        <td className="p-2 border-r border-green-500 align-top">
+                        <td className="p-2 border-r-[0.5px] border-green-500 align-top">
                           <Terminal size={16} />
                         </td>
                         <td className="p-2">
                           <Link
                             href={project.link}
                             target="_blank"
-                            className="block hover:bg-green-900/20"
+                            className="block hover:bg-green-900/20 rounded-md"
                           >
                             <div className="font-bold">{project.title}</div>
                             <div className="text-sm text-green-400">
@@ -81,7 +81,7 @@ export default function Projects() {
                               {project.stack.map((tag) => (
                                 <span
                                   key={tag}
-                                  className="text-xs mr-2 mb-2 px-2 py-1 bg-green-900 text-green-300"
+                                  className="text-xs mr-2 mb-2 px-2 py-1 bg-green-900 text-green-300 rounded-md"
                                 >
                                   #{tag}
                                 </span>
@@ -99,7 +99,7 @@ export default function Projects() {
 
           <div className="mb-8">
             <h1 className="text-2xl mb-2">PERSONAL PROJECTS</h1>
-            <div className="border border-green-500">
+            <div className="border-[0.5px] border-green-500 rounded-lg">
               <table className="w-full">
                 <tbody>
                   {PortfolioData.PersonalProjects.map((project, index) => (
@@ -107,18 +107,18 @@ export default function Projects() {
                       key={index}
                       className={
                         index !== PortfolioData.PersonalProjects.length - 1
-                          ? "border-b border-green-500"
+                          ? "border-b-[0.5px] border-green-500"
                           : ""
                       }
                     >
-                      <td className="p-2 border-r border-green-500 align-top">
+                      <td className="p-2 border-r-[0.5px] border-green-500 align-top">
                         <Terminal size={16} />
                       </td>
                       <td className="p-2">
                         <Link
                           href={project.link}
                           target="_blank"
-                          className="block hover:bg-green-900/20"
+                          className="block hover:bg-green-900/20 rounded-md"
                         >
                           <div className="font-bold">{project.title}</div>
                           <div className="text-sm text-green-400">
@@ -130,7 +130,7 @@ export default function Projects() {
                             {project.stack.map((tag) => (
                               <span
                                 key={tag}
-                                className="text-xs mr-2 mb-2 px-2 py-1 bg-green-900 text-green-300"
+                                className="text-xs mr-2 mb-2 px-2 py-1 bg-green-900 text-green-300 rounded"
                               >
                                 #{tag}
                               </span>
