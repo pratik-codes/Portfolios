@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Retrowave Portfolio",
-  description: "A retro terminal theme portfolio",
+  title: "Pratik",
+  description: "Pratik's personal website",
 };
 
 export default function RootLayout({
