@@ -34,7 +34,7 @@ body {
     rgba(0, 255, 0, 0.05) 50%,
     rgba(0, 0, 0, 0.05) 50%
   );
-  background-size: 100% 3px;
+  background-size: 100% 4px;
   pointer-events: none;
   z-index: 10;
 }
