@@ -1,11 +1,33 @@
-"use client";
+"use client"
 
 import Link from "next/link";
 import * as React from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-50 p-4 lg:px-0 font-mono mb-2 max-w-6xl mx-auto border-b border-green-500/20  backdrop-blur-md">
+    <nav
+      className={`sticky top-0 z-50 p-4 lg:px-0 font-mono mb-2 max-w-6xl mx-auto border-b border-green-500/20 ${
+        isScrolled ? "backdrop-blur-md" : ""
+      }`}
+    >
       <div className="mx-auto flex items-center gap-2">
         <div className="lg:flex items-center gap-4">
           <NavItem href="/home" blank={false}>
