@@ -195,8 +195,6 @@ export const PortfolioData: PortfolioDataType = {
       imageSrc:
         "https://cdn.hashnode.com/res/hashnode/image/upload/v1690038913340/b09cd745-3103-42f6-9314-b2082c839868.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
       hastags: [
-        "server-side-rendering",
-        "file-based-routing",
         "react",
         "nextjs",
       ],
@@ -217,7 +215,7 @@ export const PortfolioData: PortfolioDataType = {
       url: "https://blogs.tiwaripratik.com/mono-respositories-in-jsts-what-why-and-how-with-nx",
       imageSrc:
         "https://cdn.hashnode.com/res/hashnode/image/upload/v1674841183755/4f03691a-2140-4560-85c6-ce01c53096de.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
-      hastags: ["monorepos", "nx", "javascript", "typescript"],
+      hastags: ["monorepos", "javascript", "typescript"],
     },
     {
       title:
@@ -226,7 +224,7 @@ export const PortfolioData: PortfolioDataType = {
       url: "https://blogs.tiwaripratik.com/understanding-reacts-ui-rendering-process-understanding-virtual-dom-in-depth",
       imageSrc:
         "https://cdn.hashnode.com/res/hashnode/image/upload/v1671198938640/WNU1O94w5.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
-      hastags: ["react", "virtual-dom", "javascript"],
+      hastags: ["react", "javascript"],
     },
     {
       title:
@@ -246,7 +244,7 @@ export const PortfolioData: PortfolioDataType = {
       url: "https://blogs.tiwaripratik.com/simplifying-google-authentication-with-mv3-and-firebase-for-chrome-extensions-reacttypescript",
       imageSrc:
         "https://i.pcmag.com/imagery/articles/027qzlp4GUvpopUjd4UTTRF-11.fit_lim.size_1600x900.v1664814287.jpg",
-      hastags: ["chrome-extensions", "firebase", "react", "typescript"],
+      hastags: ["chrome-extensions", "react", "typescript"],
     },
     {
       title: "Why Golang",
@@ -264,7 +262,7 @@ export const PortfolioData: PortfolioDataType = {
       url: "https://pratik-codes.medium.com/how-to-write-clean-javascript-code-9c1ea003389b",
       imageSrc:
         "https://media.licdn.com/dms/image/D4D12AQEj5jjhop10Bw/article-cover_image-shrink_423_752/0/1672073941863?e=1698278400&v=beta&t=GOL7QAQtct1BwfjZKBKIbvNAerxme04n_4rgr79tovo",
-      hastags: ["aws", "lambda", "ec2"],
+      hastags: ["javascript"],
     },
     {
       title: "How Javascript Works? ( Execution Context )",
@@ -273,7 +271,7 @@ export const PortfolioData: PortfolioDataType = {
       url: "https://pratik-codes.medium.com/how-javascript-works-execution-context-b8d30ead4666",
       imageSrc:
         "https://media.licdn.com/dms/image/D4D12AQEj5jjhop10Bw/article-cover_image-shrink_423_752/0/1672073941863?e=1698278400&v=beta&t=GOL7QAQtct1BwfjZKBKIbvNAerxme04n_4rgr79tovo",
-      hastags: ["aws", "lambda", "ec2"],
+      hastags: ["javascript"],
     },
     {
       title: "Start/stop Upgrade/downgrade EC2 instances with lambda functions",
@@ -282,7 +280,7 @@ export const PortfolioData: PortfolioDataType = {
       url: "https://dev.to/pratikcodes/start-stop-upgrade-downgrade-ec2-instances-with-lambda-functions-5fn9",
       imageSrc:
         "https://media.licdn.com/dms/image/D4D12AQEj5jjhop10Bw/article-cover_image-shrink_423_752/0/1672073941863?e=1698278400&v=beta&t=GOL7QAQtct1BwfjZKBKIbvNAerxme04n_4rgr79tovo",
-      hastags: ["aws", "lambda", "ec2"],
+      hastags: ["aws", "lambda" ],
     },
     {
       title: "Javascript concept handbook for interviews",
@@ -299,7 +297,7 @@ export const PortfolioData: PortfolioDataType = {
       url: "https://pratik-codes.medium.com/optimizers-in-neural-networks-in-brief-ad4b339c6acc",
       imageSrc:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*LyZcwuLWv2FArOumCxobpA.png",
-      hastags: ["javascript", "interviews"],
+      hastags: ["ai", "neural-networks"],
     },
   ],
 };

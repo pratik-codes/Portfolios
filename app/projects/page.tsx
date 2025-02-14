@@ -9,6 +9,7 @@ import Navbar from "../components/navbar";
 export default function Projects() {
   const [cursorVisible, setCursorVisible] = useState(true);
   const [typedDescription, setTypedDescription] = useState("");
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,6 +30,19 @@ export default function Projects() {
     return () => clearInterval(typingInterval);
   }, []);
 
+  const uniqueTags = Array.from(new Set([
+    ...PortfolioData.ProfessionalExperience.flatMap(project => project.stack),
+    ...PortfolioData.PersonalProjects.flatMap(project => project.stack)
+  ]));
+
+  const filteredProfessionalProjects = selectedTag
+    ? PortfolioData.ProfessionalExperience.filter(project => project.stack.includes(selectedTag))
+    : PortfolioData.ProfessionalExperience;
+
+  const filteredPersonalProjects = selectedTag
+    ? PortfolioData.PersonalProjects.filter(project => project.stack.includes(selectedTag))
+    : PortfolioData.PersonalProjects;
+
   return (
     <>
       <Navbar />
@@ -46,21 +60,36 @@ export default function Projects() {
             </p>
           </div>
 
+          <div className="mb-4 flex flex-wrap">
+            {uniqueTags.map(tag => (
+              <button
+                key={tag}
+                onClick={() => setSelectedTag(tag)}
+                className={`text-xs mr-2 mb-2 px-2 py-1 rounded ${selectedTag === tag ? 'bg-green-700 text-green-100' : 'bg-green-900 text-green-300'}`}
+              >
+                #{tag}
+              </button>
+            ))}
+            {selectedTag && (
+              <button
+                onClick={() => setSelectedTag(null)}
+                className="text-xs mr-2 mb-2 px-2 py-1 bg-red-700 text-red-100 rounded"
+              >
+                Clear Filter
+              </button>
+            )}
+          </div>
+
           <div className="mb-8">
             <h1 className="text-2xl mb-2">PROFESSIONAL PROJECTS</h1>
             <div className="border-[0.5px] border-green-500 rounded-lg overflow-hidden">
               <table className="w-full break-words">
                 <tbody>
-                  {PortfolioData.ProfessionalExperience.map(
+                  {filteredProfessionalProjects.map(
                     (project, index) => (
                       <tr
                         key={index}
-                        className={
-                          index !==
-                          PortfolioData.ProfessionalExperience.length - 1
-                            ? "border-b-[0.5px] border-green-500"
-                            : ""
-                        }
+                        className={`${index !== filteredProfessionalProjects.length - 1 ? 'border-b-[0.5px] border-green-500' : ''} last:border-b-0`}
                       >
                         <td className="p-2 border-r-[0.5px] border-green-500 align-top">
                           <Terminal size={16} />
@@ -102,14 +131,10 @@ export default function Projects() {
             <div className="border-[0.5px] border-green-500 rounded-lg overflow-hidden">
               <table className="w-full break-words">
                 <tbody>
-                  {PortfolioData.PersonalProjects.map((project, index) => (
+                  {filteredPersonalProjects.map((project, index) => (
                     <tr
                       key={index}
-                      className={
-                        index !== PortfolioData.PersonalProjects.length - 1
-                          ? "border-b-[0.5px] border-green-500"
-                          : ""
-                      }
+                      className={`${index !== filteredPersonalProjects.length - 1 ? 'border-b-[0.5px] border-green-500' : ''} last:border-b-0`}
                     >
                       <td className="p-2 border-r-[0.5px] border-green-500 align-top">
                         <Terminal size={16} />
