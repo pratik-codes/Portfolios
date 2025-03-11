@@ -3,206 +3,502 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --background: rgb(0, 14, 0);
+     --background: #000e00;
+     --foreground: #ededed;
+     --primary-green: #00ff00;
+     --secondary-green: #00cc00;
+     --terminal-glow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: rgb(0, 14, 0);
-    --foreground: #ededed;
-  }
+     :root {
+          --background: #000e00;
+          --foreground: #ededed;
+     }
 }
 
 body {
-  color: var(--foreground);
-  font-family: "JetBrains Mono", monospace;
-  /*background: black;*/
-  background: rgb(0, 14, 0);
-  overflow: auto;
+     color: var(--foreground);
+     font-family: "JetBrains Mono", monospace;
+     background: var(--background);
+     overflow: auto;
+     position: relative;
 }
 
 .crt-overlay {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 255, 0, 0.05) 50%,
-    rgba(0, 0, 0, 0.05) 50%
-  );
-  background-size: 100% 4px;
-  pointer-events: none;
-  z-index: 10;
+     content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(to bottom,
+               rgba(0, 255, 0, 0.03) 50%,
+               rgba(0, 0, 0, 0.03) 50%);
+     background-size: 100% 4px;
+     pointer-events: none;
+     z-index: 10;
 }
 
 .crt-overlay::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(18, 16, 16, 0.1);
-  opacity: 0;
-  z-index: 11;
-  pointer-events: none;
-  animation: flicker 0.15s infinite;
+     content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(18, 16, 16, 0.1);
+     opacity: 0;
+     z-index: 11;
+     pointer-events: none;
+     animation: flicker 0.15s infinite;
+}
+
+.crt-overlay::after {
+     content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: radial-gradient(circle at center,
+               transparent 60%,
+               rgba(0, 0, 0, 0.8) 100%);
+     pointer-events: none;
+     z-index: 9;
 }
 
 .crt-text {
-  text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
-  position: relative;
-  z-index: 1;
+     text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+     position: relative;
+     z-index: 1;
 }
 
 .crt-text::before {
-  content: attr(data-text);
-  position: absolute;
-  left: -1px;
-  text-shadow: 1px 0 green;
-  opacity: 0.7;
-  z-index: -1;
+     content: attr(data-text);
+     position: absolute;
+     left: -1px;
+     text-shadow: 1px 0 green;
+     opacity: 0.7;
+     z-index: -1;
 }
 
 .green-grayscale {
-  filter: grayscale(100%) sepia(100%) hue-rotate(90deg) saturate(500%);
+     filter: grayscale(100%) sepia(100%) hue-rotate(90deg) saturate(500%);
 }
 
 .image-container {
-  position: relative;
-  display: inline-block;
+     position: relative;
+     display: inline-block;
+     box-shadow: var(--terminal-glow);
+     border: 1px solid rgba(0, 255, 0, 0.3);
 }
 
 .grayscale-image {
-  filter: grayscale(100%);
-  display: block;
+     filter: grayscale(100%);
+     display: block;
 }
 
 .green-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(
-    0,
-    255,
-    0,
-    0.2
-  ); /* Adjust green intensity with alpha */
-  pointer-events: none; /* Allows clicks to pass through if needed */
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 255, 0, 0.2);
+     pointer-events: none;
+}
+
+/* Terminal typing animation */
+.typing-animation::after {
+     content: "█";
+     animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+     0%,
+     100% {
+          opacity: 1;
+     }
+
+     50% {
+          opacity: 0;
+     }
+}
+
+/* Terminal command animation */
+.terminal-command {
+     position: relative;
+     display: inline-flex;
+     align-items: center;
+}
+
+.terminal-command::before {
+     content: "$";
+     color: var(--primary-green);
+     margin-right: 0.5rem;
+     opacity: 0.8;
+}
+
+.terminal-command-text {
+     overflow: hidden;
+     border-right: 0.15em solid var(--primary-green);
+     white-space: nowrap;
+     animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+     from {
+          width: 0
+     }
+
+     to {
+          width: 100%
+     }
+}
+
+@keyframes blink-caret {
+
+     from,
+     to {
+          border-color: transparent
+     }
+
+     50% {
+          border-color: var(--primary-green)
+     }
+}
+
+/* Subtle pulse effect for important elements */
+.terminal-pulse {
+     animation: terminal-pulse 4s ease infinite;
+}
+
+@keyframes terminal-pulse {
+     0% {
+          box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4);
+     }
+
+     70% {
+          box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+     }
+
+     100% {
+          box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+     }
 }
 
 @keyframes flicker {
-  0% {
-    opacity: 0.27861;
-  }
+     0% {
+          opacity: 0.27861;
+     }
 
-  5% {
-    opacity: 0.34769;
-  }
+     5% {
+          opacity: 0.34769;
+     }
 
-  10% {
-    opacity: 0.23604;
-  }
+     10% {
+          opacity: 0.23604;
+     }
 
-  15% {
-    opacity: 0.90626;
-  }
+     15% {
+          opacity: 0.90626;
+     }
 
-  20% {
-    opacity: 0.18128;
-  }
+     20% {
+          opacity: 0.18128;
+     }
 
-  25% {
-    opacity: 0.83891;
-  }
+     25% {
+          opacity: 0.83891;
+     }
 
-  30% {
-    opacity: 0.65583;
-  }
+     30% {
+          opacity: 0.65583;
+     }
 
-  35% {
-    opacity: 0.67807;
-  }
+     35% {
+          opacity: 0.67807;
+     }
 
-  40% {
-    opacity: 0.26559;
-  }
+     40% {
+          opacity: 0.26559;
+     }
 
-  45% {
-    opacity: 0.84693;
-  }
+     45% {
+          opacity: 0.84693;
+     }
 
-  50% {
-    opacity: 0.96019;
-  }
+     50% {
+          opacity: 0.96019;
+     }
 
-  55% {
-    opacity: 0.08594;
-  }
+     55% {
+          opacity: 0.08594;
+     }
 
-  60% {
-    opacity: 0.20313;
-  }
+     60% {
+          opacity: 0.20313;
+     }
 
-  65% {
-    opacity: 0.71988;
-  }
+     65% {
+          opacity: 0.71988;
+     }
 
-  70% {
-    opacity: 0.53455;
-  }
+     70% {
+          opacity: 0.53455;
+     }
 
-  75% {
-    opacity: 0.37288;
-  }
+     75% {
+          opacity: 0.37288;
+     }
 
-  80% {
-    opacity: 0.71428;
-  }
+     80% {
+          opacity: 0.71428;
+     }
 
-  85% {
-    opacity: 0.70419;
-  }
+     85% {
+          opacity: 0.70419;
+     }
 
-  90% {
-    opacity: 0.7003;
-  }
+     90% {
+          opacity: 0.7003;
+     }
 
-  95% {
-    opacity: 0.36108;
-  }
+     95% {
+          opacity: 0.36108;
+     }
 
-  100% {
-    opacity: 0.24387;
-  }
+     100% {
+          opacity: 0.24387;
+     }
 }
 
 @keyframes textShadow {
-  0% {
-    text-shadow:
-      0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5),
-      -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3),
-      0 0 3px;
-  }
+     0% {
+          text-shadow:
+               0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5),
+               -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3),
+               0 0 3px;
+     }
 
-  5% {
-    text-shadow:
-      2.7928974010788217px 0 1px rgba(0, 30, 255, 0.5),
-      -2.7928974010788217px 0 1px rgba(255, 0, 80, 0.3),
-      0 0 3px;
-  }
+     5% {
+          text-shadow:
+               2.7928974010788217px 0 1px rgba(0, 30, 255, 0.5),
+               -2.7928974010788217px 0 1px rgba(255, 0, 80, 0.3),
+               0 0 3px;
+     }
 
-  /* ... continue with random values ... */
-  100% {
-    text-shadow:
-      0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5),
-      -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3),
-      0 0 3px;
-  }
+     /* ... continue with random values ... */
+     100% {
+          text-shadow:
+               0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5),
+               -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3),
+               0 0 3px;
+     }
+}
+
+/* Fade-in animation for content blocks */
+.fade-in {
+     opacity: 0;
+     transform: translateY(10px);
+     animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+          transform: translateY(10px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+/* Staggered fade-in for multiple items */
+.stagger-fade-in>* {
+     opacity: 0;
+     transform: translateY(10px);
+}
+
+.stagger-fade-in>*:nth-child(1) {
+     animation: fadeIn 0.6s ease-out 0.1s forwards;
+}
+
+.stagger-fade-in>*:nth-child(2) {
+     animation: fadeIn 0.6s ease-out 0.2s forwards;
+}
+
+.stagger-fade-in>*:nth-child(3) {
+     animation: fadeIn 0.6s ease-out 0.3s forwards;
+}
+
+.stagger-fade-in>*:nth-child(4) {
+     animation: fadeIn 0.6s ease-out 0.4s forwards;
+}
+
+.stagger-fade-in>*:nth-child(5) {
+     animation: fadeIn 0.6s ease-out 0.5s forwards;
+}
+
+.stagger-fade-in>*:nth-child(6) {
+     animation: fadeIn 0.6s ease-out 0.6s forwards;
+}
+
+.stagger-fade-in>*:nth-child(7) {
+     animation: fadeIn 0.6s ease-out 0.7s forwards;
+}
+
+.stagger-fade-in>*:nth-child(8) {
+     animation: fadeIn 0.6s ease-out 0.8s forwards;
+}
+
+.stagger-fade-in>*:nth-child(9) {
+     animation: fadeIn 0.6s ease-out 0.9s forwards;
+}
+
+.stagger-fade-in>*:nth-child(10) {
+     animation: fadeIn 0.6s ease-out 1.0s forwards;
+}
+
+.stagger-fade-in>*:nth-child(n+11) {
+     animation: fadeIn 0.6s ease-out 1.1s forwards;
+}
+
+/* Enhanced card styles */
+.terminal-card {
+     position: relative;
+     transition: all 0.3s ease;
+     overflow: hidden;
+}
+
+.terminal-card::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 2px;
+     background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.7), transparent);
+     transform: translateX(-100%);
+     transition: transform 0.5s ease;
+}
+
+.terminal-card:hover::before {
+     transform: translateX(100%);
+}
+
+.terminal-card:hover {
+     box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+/* Glitch effect for cards */
+.glitch-hover {
+     position: relative;
+}
+
+.glitch-hover:hover::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 255, 0, 0.05);
+     animation: glitch 0.3s linear;
+}
+
+@keyframes glitch {
+     0% {
+          clip-path: inset(40% 0 61% 0);
+     }
+
+     20% {
+          clip-path: inset(92% 0 1% 0);
+     }
+
+     40% {
+          clip-path: inset(43% 0 1% 0);
+     }
+
+     60% {
+          clip-path: inset(25% 0 58% 0);
+     }
+
+     80% {
+          clip-path: inset(54% 0 7% 0);
+     }
+
+     100% {
+          clip-path: inset(58% 0 43% 0);
+     }
+}
+
+/* Skill tag animation */
+.skill-tag {
+     position: relative;
+     overflow: hidden;
+     transition: all 0.3s ease;
+}
+
+.skill-tag::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 1px;
+     background: rgba(0, 255, 0, 0.5);
+     transform: scaleX(0);
+     transform-origin: right;
+     transition: transform 0.3s ease;
+}
+
+.skill-tag:hover {
+     transform: translateY(-2px);
+}
+
+.skill-tag:hover::after {
+     transform: scaleX(1);
+     transform-origin: left;
+}
+
+/* Terminal loading animation */
+.terminal-loading::after {
+     content: '';
+     display: inline-block;
+     width: 0.5em;
+     height: 1em;
+     background-color: currentColor;
+     animation: blink 1s step-end infinite;
+}
+
+/* Scan line effect for cards */
+.scan-line-effect {
+     position: relative;
+     overflow: hidden;
+}
+
+.scan-line-effect::after {
+     content: '';
+     position: absolute;
+     top: -100%;
+     left: 0;
+     width: 100%;
+     height: 10px;
+     background: linear-gradient(transparent, rgba(0, 255, 0, 0.2), transparent);
+     animation: scanLine 2s linear infinite;
+}
+
+@keyframes scanLine {
+     0% {
+          top: -10px;
+     }
+
+     100% {
+          top: 100%;
+     }
 }
