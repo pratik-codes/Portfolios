@@ -1,113 +1,134 @@
-'use client'
-
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { PortfolioData } from '../lib/data'
-import { Terminal } from 'lucide-react'
+import { Terminal, Calendar, Tag, ArrowRight, AlertCircle } from 'lucide-react'
 import Navbar from '../components/navbar'
+import { getAllBlogPosts } from '../lib/blog-utils'
+import { Metadata } from 'next'
+import path from 'path'
+import fs from 'fs'
+import matter from 'gray-matter'
+import { BlogListing } from './client-components/BlogListing'
 
-export default function Blogs() {
-  const [typedDescription, setTypedDescription] = useState('')
-  const [cursorVisible, setCursorVisible] = useState(true)
-  const [selectedTag, setSelectedTag] = useState<string | null>(null)
+export const metadata: Metadata = {
+     title: 'Blog | Pratik',
+     description: 'Explore my thoughts and articles on technology, projects, and lifelong learning',
+};
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCursorVisible(v => !v)
-    }, 500)
-    return () => clearInterval(interval)
-  }, [])
+// Function to directly load blog posts as a workaround for server component issues
+async function getMarkdownBlogPosts() {
+     try {
+          const blogsDirectory = path.join(process.cwd(), 'content/blogs')
+          if (!fs.existsSync(blogsDirectory)) {
+               console.error(`Blogs directory does not exist: ${blogsDirectory}`)
+               return []
+          }
 
-  useEffect(() => {
-    const description = "Journey through my thoughts: explore articles on technology, projects, and lifelong learning"
-    let i = 0
-    const typingInterval = setInterval(() => {
-      setTypedDescription(description.slice(0, i))
-      i++
-      if (i > description.length) clearInterval(typingInterval)
-    }, 50)
-    return () => clearInterval(typingInterval)
-  }, [])
+          const fileNames = fs.readdirSync(blogsDirectory)
+          const markdownFiles = fileNames.filter(file =>
+               file.endsWith('.md') && file !== 'README.md'
+          )
 
-  const uniqueTags = Array.from(new Set(PortfolioData.Blogs.flatMap(blog => blog.hastags)))
+          if (markdownFiles.length === 0) {
+               console.warn('No markdown blog files found')
+               return []
+          }
 
-  const filteredBlogs = selectedTag
-    ? PortfolioData.Blogs.filter(blog => blog.hastags.includes(selectedTag))
-    : PortfolioData.Blogs
+          const posts = markdownFiles.map(fileName => {
+               const id = fileName.replace(/\.md$/, '')
+               const fullPath = path.join(blogsDirectory, fileName)
+               const fileContents = fs.readFileSync(fullPath, 'utf8')
+               const matterResult = matter(fileContents)
 
-  return (
-    <div>
-      <Navbar />
-      <div className="min-h-screen p-4 text-green-500 font-mono">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8">
-            <div className="flex items-center space-x-2 text-sm mb-8">
-              <span className="text-green-400">$</span>
-              <span className="animate-pulse">cat blogs.txt</span>
-            </div>
+               return {
+                    title: matterResult.data.title || 'Untitled Post',
+                    description: matterResult.data.description || 'No description',
+                    url: `/blogs/${id}`,
+                    imageSrc: '',
+                    hastags: matterResult.data.tags || [],
+                    isLocal: true,
+                    date: matterResult.data.date || 'No date',
+               }
+          })
 
-            <div className="mb-8">
-              <p className="text-lg mb-4">{typedDescription}{cursorVisible ? '█' : ' '}</p>
-            </div>
+          return posts.sort((a, b) => {
+               if (a.date < b.date) {
+                    return 1
+               } else {
+                    return -1
+               }
+          })
+     } catch (error) {
+          console.error('Error loading blog posts directly:', error)
+          return []
+     }
+}
 
-            <h1 className="text-2xl mb-4">BLOGS</h1>
+// Server component that fetches blog data
+export default async function Blogs() {
+     // Debug information
+     const debugInfo = {
+          markdownCount: 0,
+          externalCount: PortfolioData.Blogs.length,
+          error: null as string | null,
+          markdownFiles: [] as string[]
+     }
 
-            <div className="mb-4 flex flex-wrap">
-              {uniqueTags.map(tag => (
-                <button
-                  key={tag}
-                  onClick={() => setSelectedTag(tag)}
-                  className={`text-xs mr-2 mb-2 px-2 py-1 rounded ${selectedTag === tag ? 'bg-green-700 text-green-100' : 'bg-green-900 text-green-300'}`}
-                >
-                  #{tag}
-                </button>
-              ))}
-              {selectedTag && (
-                <button
-                  onClick={() => setSelectedTag(null)}
-                  className="text-xs mr-2 mb-2 px-2 py-1 bg-red-700 text-red-100 rounded"
-                >
-                  Clear Filter
-                </button>
-              )}
-            </div>
+     // Check if content/blogs directory exists
+     try {
+          const contentDir = path.join(process.cwd(), 'content/blogs')
+          if (fs.existsSync(contentDir)) {
+               const files = fs.readdirSync(contentDir)
+               debugInfo.markdownFiles = files.filter(file => file.endsWith('.md'))
+          } else {
+               debugInfo.error = "The content/blogs directory doesn't exist"
+          }
+     } catch (err: any) {
+          debugInfo.error = `Error checking content directory: ${err.message}`
+     }
 
-            <div className="border-[0.5px] border-green-500 rounded-lg">
-              <table className="w-full">
-                <tbody>
-                  {filteredBlogs.map((blog, index) => (
-                    <tr key={index} className={`${index !== filteredBlogs.length - 1 ? 'border-b-[0.5px] border-green-500' : ''} last:border-b-0`}>
-                      <td className="p-2 border-r-[0.5px] border-green-500 align-top">
-                        <Terminal size={16} />
-                      </td>
-                      <td className="p-2">
-                        <Link href={blog.url} target="_blank" className="block hover:bg-green-900/20 rounded-md">
-                          <div className="font-bold">{blog.title}</div>
-                          <div className="text-sm text-green-400">{blog.description}</div>
-                          <div className="text-xs text-green-300 my-1">
-                            {blog.hastags.map(tag => (
-                              <span
-                                key={tag}
-                                className="text-xs mr-2 mb-2 px-2 py-1 bg-green-900 text-green-300 rounded"
-                              >
-                                #{tag}
-                              </span>
-                            ))}
-                          </div>
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+     // Try to get local markdown blogs using two methods
+     let mdBlogs = []
+     let combinedBlogs = []
+
+     try {
+          // Method 1: Try using the blog-utils
+          mdBlogs = await getAllBlogPosts()
+          debugInfo.markdownCount = mdBlogs.length
+
+          const formattedMdBlogs = mdBlogs.map(blog => ({
+               title: blog.title,
+               description: blog.description,
+               url: `/blogs/${blog.id}`,
+               imageSrc: '',
+               hastags: blog.tags,
+               isLocal: true,
+               date: blog.date
+          }))
+
+          combinedBlogs = [...formattedMdBlogs, ...PortfolioData.Blogs]
+     } catch (error: any) {
+          console.error('Error loading blog posts via blog-utils:', error)
+          debugInfo.error = `Error loading markdown blogs via blog-utils: ${error.message}`
+
+          try {
+               // Method 2: Try direct loading as a fallback
+               const directBlogs = await getMarkdownBlogPosts()
+               debugInfo.markdownCount = directBlogs.length
+               combinedBlogs = [...directBlogs, ...PortfolioData.Blogs]
+          } catch (directError: any) {
+               console.error('Error directly loading blog posts:', directError)
+               debugInfo.error += ` | Direct loading error: ${directError.message}`
+               combinedBlogs = PortfolioData.Blogs
+          }
+     }
+
+     return (
+          <div>
+               <Navbar />
+               <div className="min-h-screen p-4 text-green-500 font-mono">
+                    <BlogListing initialBlogs={combinedBlogs} debugInfo={debugInfo} />
+               </div>
           </div>
-
-          <div className="text-sm">
-            $ Terminal v2.0.24 {cursorVisible ? '█' : ' '}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+     )
 }
