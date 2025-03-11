@@ -2,10 +2,21 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Terminal, Calendar, Tag, ArrowRight, AlertCircle } from 'lucide-react'
+import { Terminal, Tag, ArrowRight } from 'lucide-react'
+
+// Blog interface
+interface BlogData {
+     title: string;
+     description: string;
+     url: string;
+     imageSrc: string;
+     hastags: string[];
+     isLocal?: boolean;
+     date?: string;
+}
 
 interface BlogListingProps {
-     initialBlogs: any[]
+     initialBlogs: BlogData[]
      debugInfo: {
           markdownCount: number
           externalCount: number
@@ -18,7 +29,8 @@ export function BlogListing({ initialBlogs, debugInfo }: BlogListingProps) {
      const [typedDescription, setTypedDescription] = useState('')
      const [cursorVisible, setCursorVisible] = useState(true)
      const [selectedTag, setSelectedTag] = useState<string | null>(null)
-     const [localBlogs] = useState<any[]>(initialBlogs)
+     const [localBlogs] = useState<BlogData[]>(initialBlogs)
+     // eslint-disable-next-line @typescript-eslint/no-unused-vars
      const [showDebug, setShowDebug] = useState(false)
 
      useEffect(() => {

@@ -1,9 +1,7 @@
 import React from 'react'
-import Link from 'next/link'
 import { PortfolioData } from '../lib/data'
-import { Terminal, Calendar, Tag, ArrowRight, AlertCircle } from 'lucide-react'
 import Navbar from '../components/navbar'
-import { getAllBlogPosts } from '../lib/blog-utils'
+import { getAllBlogPosts, BlogPost } from '../lib/blog-utils'
 import { Metadata } from 'next'
 import path from 'path'
 import fs from 'fs'
@@ -15,8 +13,19 @@ export const metadata: Metadata = {
      description: 'Explore my thoughts and articles on technology, projects, and lifelong learning',
 };
 
+// Define blog post interface
+interface BlogData {
+     title: string;
+     description: string;
+     url: string;
+     imageSrc: string;
+     hastags: string[];
+     isLocal?: boolean;
+     date?: string;
+}
+
 // Function to directly load blog posts as a workaround for server component issues
-async function getMarkdownBlogPosts() {
+async function getMarkdownBlogPosts(): Promise<BlogData[]> {
      try {
           const blogsDirectory = path.join(process.cwd(), 'content/blogs')
           if (!fs.existsSync(blogsDirectory)) {
@@ -64,14 +73,22 @@ async function getMarkdownBlogPosts() {
      }
 }
 
+// Debug information interface
+interface DebugInfo {
+     markdownCount: number;
+     externalCount: number;
+     error: string | null;
+     markdownFiles: string[];
+}
+
 // Server component that fetches blog data
 export default async function Blogs() {
      // Debug information
-     const debugInfo = {
+     const debugInfo: DebugInfo = {
           markdownCount: 0,
           externalCount: PortfolioData.Blogs.length,
-          error: null as string | null,
-          markdownFiles: [] as string[]
+          error: null,
+          markdownFiles: []
      }
 
      // Check if content/blogs directory exists
@@ -83,13 +100,14 @@ export default async function Blogs() {
           } else {
                debugInfo.error = "The content/blogs directory doesn't exist"
           }
-     } catch (err: any) {
-          debugInfo.error = `Error checking content directory: ${err.message}`
+     } catch (err) {
+          const error = err as Error
+          debugInfo.error = `Error checking content directory: ${error.message}`
      }
 
      // Try to get local markdown blogs using two methods
-     let mdBlogs = []
-     let combinedBlogs = []
+     let mdBlogs: BlogPost[] = []
+     let combinedBlogs: BlogData[] = []
 
      try {
           // Method 1: Try using the blog-utils
@@ -107,7 +125,8 @@ export default async function Blogs() {
           }))
 
           combinedBlogs = [...formattedMdBlogs, ...PortfolioData.Blogs]
-     } catch (error: any) {
+     } catch (err) {
+          const error = err as Error
           console.error('Error loading blog posts via blog-utils:', error)
           debugInfo.error = `Error loading markdown blogs via blog-utils: ${error.message}`
 
@@ -116,7 +135,8 @@ export default async function Blogs() {
                const directBlogs = await getMarkdownBlogPosts()
                debugInfo.markdownCount = directBlogs.length
                combinedBlogs = [...directBlogs, ...PortfolioData.Blogs]
-          } catch (directError: any) {
+          } catch (directErr) {
+               const directError = directErr as Error
                console.error('Error directly loading blog posts:', directError)
                debugInfo.error += ` | Direct loading error: ${directError.message}`
                combinedBlogs = PortfolioData.Blogs

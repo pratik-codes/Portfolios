@@ -5,6 +5,7 @@ import Navbar from '../components/navbar'
 import { PortfolioData } from '../lib/data'
 import Link from 'next/link'
 import Image from 'next/image'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Terminal, Calendar, ArrowRight } from 'lucide-react'
 
 const Talks = () => {

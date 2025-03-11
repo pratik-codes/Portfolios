@@ -3,44 +3,45 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+     src: "./fonts/GeistVF.woff",
+     variable: "--font-geist-sans",
+     weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+     src: "./fonts/GeistMonoVF.woff",
+     variable: "--font-geist-mono",
+     weight: "100 900",
 });
 
 export const metadata: Metadata = {
-  title: "Pratik",
-  description: "Pratik's personal website",
+     title: "Pratik",
+     description: "Pratik's personal website",
 };
 
 export default function RootLayout({
-  children,
+     children,
 }: Readonly<{
-  children: React.ReactNode;
+     children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <head>
-        {/* <link */}
-        {/*   rel="stylesheet" */}
-        {/*   href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" */}
-        {/* /> */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
-        />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="crt-overlay"></div>
-        {children}
-      </body>
-    </html>
-  );
+     return (
+          <html lang="en">
+               <head>
+                    {/* <link */}
+                    {/*   rel="stylesheet" */}
+                    {/*   href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" */}
+                    {/* /> */}
+                    {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+                    <link
+                         rel="stylesheet"
+                         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+                    />
+               </head>
+               <body
+                    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+               >
+                    <div className="crt-overlay"></div>
+                    {children}
+               </body>
+          </html>
+     );
 }

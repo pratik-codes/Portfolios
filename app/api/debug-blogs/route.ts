@@ -9,6 +9,7 @@ export async function GET() {
           blogsDir: '',
           fileList: [] as string[],
           error: null as string | null,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           mdFileContents: {} as Record<string, any>,
      };
 
@@ -36,6 +37,7 @@ export async function GET() {
                                    // Get first 500 characters to see if content is valid
                                    preview: contents.substring(0, 500),
                               };
+                              // eslint-disable-next-line @typescript-eslint/no-explicit-any
                          } catch (readError: any) {
                               debug.mdFileContents[file] = { error: readError.message };
                          }
@@ -44,6 +46,7 @@ export async function GET() {
           } else {
                debug.error = "Blogs directory doesn't exist";
           }
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
      } catch (error: any) {
           debug.error = error.message;
      }

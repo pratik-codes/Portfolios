@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { PortfolioData } from '@/app/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Terminal, Calendar, ExternalLink, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Terminal, ExternalLink, ArrowRight } from 'lucide-react';
 import Navbar from './navbar';
 
 export default function TalkDetails({ params }: { params: { id: string } }) {
