@@ -8,8 +8,6 @@ medium: "https://pratik-codes.medium.com/understanding-memory-management-in-rust
 ---
 
 
-# Understanding Memory Management in Rust
-
 Memory management is a critical aspect of software development. It ensures that applications use memory efficiently and avoid common issues like memory leaks, dangling pointers, and crashes. In this blog, we’ll explore how JavaScript, C++, and Rust handle memory management, and why it matters.
 
 ---
