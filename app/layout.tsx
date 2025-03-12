@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import ClientAnalytics from "./components/ClientAnalytics";
 
 const geistSans = localFont({
      src: "./fonts/GeistVF.woff",
@@ -40,7 +41,9 @@ export default function RootLayout({
                     className={`${geistSans.variable} ${geistMono.variable} antialiased`}
                >
                     <div className="crt-overlay"></div>
-                    {children}
+                    <ClientAnalytics>
+                         {children}
+                    </ClientAnalytics>
                </body>
           </html>
      );
