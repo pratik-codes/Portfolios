@@ -58,7 +58,7 @@ export function BlogListing({ initialBlogs, debugInfo }: BlogListingProps) {
           : localBlogs
 
      return (
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
                <div className="mb-8">
                     <div className="flex items-center space-x-2 text-sm mb-8">
                          <span className="text-green-400">$</span>
@@ -130,7 +130,7 @@ export function BlogListing({ initialBlogs, debugInfo }: BlogListingProps) {
                     </div>
 
                     {/* Blog Cards Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                          {filteredBlogs.map((blog, index) => (
                               <Link
                                    key={index}

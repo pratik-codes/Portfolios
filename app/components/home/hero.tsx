@@ -29,21 +29,21 @@ export default function Component() {
   }, []);
 
   return (
-    <div className="text-green-500 font-mono flex justify-center max-w-6xl  mx-auto min-h-full p-4">
+    <div className="text-green-500 font-mono flex justify-center max-w-4xl mx-auto px-4 py-12 md:px-0">
       <div className="mt-6 w-full">
         <div className="mb-4 flex items-center space-x-2 text-sm">
           <span className="text-green-400">$</span>
           <span className="animate-pulse">whoami</span>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 lg:items-center">
+        <div className="flex-row gap-8 lg:items-center">
           <div className="w-48 h-48 relative flex-shrink-0 image-container">
             <Image
               // src={AsciImage}
               src="https://avatars.githubusercontent.com/u/64960569?s=400&u=7895fdab7327511189a670d31846a48ea8f50f95&v=4"
               alt="Profile avatar"
-              width={150}
-              height={150}
+              width={100}
+              height={100}
               className="w-full h-full object-cover grayscale-image"
             />
             <div className="green-overlay"></div>
@@ -60,8 +60,8 @@ export default function Component() {
             </h1>
             <div className="mb-6 space-y-2">
               <div className="mt-4 ">
-                <div className="space-y-2">
-                  <p>
+                <div className="flex flex-wrap gap-4 text-sm">
+                  <span>
                     [x:{" "}
                     <Link
                       target="_blank"
@@ -71,9 +71,9 @@ export default function Component() {
                       {PortfolioData.contact.twitter}
                     </Link>
                     ]
-                  </p>
-                  <p>[discord: {PortfolioData.contact.discord}]</p>
-                  <p>
+                  </span>
+                  <span>[discord: {PortfolioData.contact.discord}]</span>
+                  <span>
                     [github:{" "}
                     <Link
                       target="_blank"
@@ -82,8 +82,8 @@ export default function Component() {
                     >
                       {PortfolioData.contact.github}]
                     </Link>
-                  </p>
-                  <p>
+                  </span>
+                  <span>
                     [email:{" "}
                     <Link
                       target="_blank"
@@ -93,7 +93,7 @@ export default function Component() {
                       {PortfolioData.contact.email}
                     </Link>
                     ]
-                  </p>
+                  </span>
                 </div>
               </div>
             </div>

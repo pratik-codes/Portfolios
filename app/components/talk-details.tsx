@@ -34,7 +34,7 @@ export default function TalkDetails({ params }: { params: { id: string } }) {
      if (!talk) {
           return (
                <div className="min-h-screen p-4 text-green-500 font-mono">
-                    <div className="max-w-6xl mx-auto my-16">
+                    <div className="max-w-4xl mx-auto my-16">
                          <div className="flex items-center space-x-2 text-sm mb-4">
                               <span className="text-green-400">$</span>
                               <span className="animate-pulse">Error: Talk not found</span>
@@ -46,7 +46,7 @@ export default function TalkDetails({ params }: { params: { id: string } }) {
 
      return (
           <div className="min-h-screen p-4 text-green-500 font-mono">
-               <div className="max-w-6xl mx-auto">
+               <div className="max-w-4xl mx-auto">
                     <div className="flex items-center space-x-2 text-sm mb-12 mt-8">
                          <Link
                               href="/talks"

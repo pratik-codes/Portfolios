@@ -47,7 +47,7 @@ export const PortfolioData: PortfolioDataType = {
      greeting: "Hello, I'm Pratik",
      position: "Fullstack Software Engineer",
      about: [
-          "Welcome to my digital lair. I'm a fullstack developer with 4+ years of experience hacking the web, worked into the realms of edtech, AI, finance, and Web3. I specialize in Go, Rust, Next/React, Node, AWS, and Solidity, but my curiosity is infinite—always exploring new tools and tech.",
+          "Welcome to my digital lair. I'm a fullstack developer with 4+ years of experience hacking the web, worked into the realms of edtech, AI, finance, and Web3. I specialize in Go, Rust, Next/React, Node, and AWS, but my curiosity is infinite—always exploring new tools and tech.",
           "Here at my command center, I build with precision, from distributed systems to decentralized architectures. I'm passionate about performance, developer productivity, and the power of the terminal—whether it's in Neovim, NixOS, or anywhere a terminal window shines.",
      ],
      contact: {

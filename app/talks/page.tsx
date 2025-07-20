@@ -34,7 +34,7 @@ const Talks = () => {
           <div>
                <Navbar />
                <div className="min-h-screen p-4 text-green-500 font-mono">
-                    <div className="max-w-6xl mx-auto">
+                    <div className="max-w-4xl mx-auto">
                          <div className="mb-8">
                               <div className="flex items-center space-x-2 text-sm mb-8">
                                    <span className="text-green-400">$</span>
@@ -48,7 +48,7 @@ const Talks = () => {
                               <h1 className="text-2xl mb-4">TALKS</h1>
 
                               {/* Talks Cards Grid */}
-                              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                    {PortfolioData.Talks.map((talk, index) => (
                                         <Link
                                              key={index}
