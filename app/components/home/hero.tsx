@@ -29,7 +29,7 @@ export default function Component() {
   }, []);
 
   return (
-    <div className="text-green-500 font-mono flex justify-center max-w-4xl mx-auto px-4 py-12 md:px-0">
+    <div className="text-green-500 font-mono flex justify-center max-w-4xl mx-auto px-4 pb-12 md:px-0">
       <div className="mt-6 w-full">
         <div className="mb-4 flex items-center space-x-2 text-sm">
           <span className="text-green-400">$</span>
