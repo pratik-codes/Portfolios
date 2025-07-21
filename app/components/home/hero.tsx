@@ -101,12 +101,12 @@ export default function Component() {
         </div>
 
         <div className="space-y-6 mt-8 border-t border-green-500/20 pt-6">
-          <div className="mb-4 flex items-center space-x-2 text-sm">
+          <div className="mb-4 flex items-center space-x-2 text-xs">
             <span className="text-green-400">$</span>
             <span className="animate-pulse">cat about.txt</span>
           </div>
           {PortfolioData.about.map((line, index) => (
-            <p key={index} className="leading-relaxed">
+            <p key={index} className="leading-relaxed text-sm">
               {line}
             </p>
           ))}
