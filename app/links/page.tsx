@@ -1,7 +1,7 @@
 "use client";
 
 import { PortfolioData } from "@/app/lib/data";
-import Navbar from "@/app/components/navbar";
+import Image from "next/image";
 
 export default function LinksPage() {
   return (
@@ -13,9 +13,11 @@ export default function LinksPage() {
             {/* Avatar */}
             <div className="w-[160px] h-[160px] xl:w-[184px] xl:h-[184px] mx-auto xl:mx-0">
               <div className="relative w-full h-full">
-                <img
+                <Image
                   src="https://avatars.githubusercontent.com/u/64960569?s=400&u=7895fdab7327511189a670d31846a48ea8f50f95&v=4"
                   alt="Pratik Tiwari"
+                  width={184}
+                  height={184}
                   className="mt-10 xl:mt-0 h-full w-full rounded-full object-cover transition-all duration-200 ease-in-out border border-green-400/30"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
@@ -215,7 +217,7 @@ export default function LinksPage() {
 
                     <div className="mb-4">
                       <div className="text-green-400 text-sm leading-relaxed">
-                        Let's chat about code, tech, or just hang out in the digital space.
+                        Let&apos;s chat about code, tech, or just hang out in the digital space.
                       </div>
                     </div>
 
@@ -286,7 +288,7 @@ export default function LinksPage() {
             <div className="mt-8 glass-card p-6 font-mono text-sm rounded-[1.2rem] animate-on-load animate-fade-in-up animate-delay-600">
               <div className="text-green-400 mb-2">$ whoami</div>
               <div className="text-green-300 mb-2">pratik-codes: fullstack developer, blockchain enthusiast, terminal lover</div>
-              <div className="text-green-500">$ echo "Thanks for visiting my links! 🚀"</div>
+              <div className="text-green-500">$ echo &quot;Thanks for visiting my links! 🚀&quot;</div>
             </div>
           </div>
         </div>
