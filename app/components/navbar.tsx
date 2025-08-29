@@ -31,8 +31,11 @@ export default function Navbar() {
                          <NavItem href="/blogs" blank={false}>
                               blogs
                          </NavItem>
-                         <NavItem href="talks" blank={false}>
+                         <NavItem href="/talks" blank={false}>
                               talks
+                         </NavItem>
+                         <NavItem href="/links" blank={false}>
+                              links
                          </NavItem>
                     </div>
                </div>
