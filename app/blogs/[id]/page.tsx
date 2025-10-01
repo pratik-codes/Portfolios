@@ -63,7 +63,7 @@ export default function BlogPost(props: any) {
 
                // Return the JSX from this inner async function
                return (
-                    <div className="min-h-screen p-4 text-green-500 font-mono">
+                    <div className="min-h-screen p-4 text-green-500">
                          <div className="max-w-4xl mx-auto mt-8">
                               {/* Back button and external links */}
                               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-3">

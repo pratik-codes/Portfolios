@@ -146,7 +146,7 @@ export default async function Blogs() {
      return (
           <div>
                <Navbar />
-               <div className="min-h-screen p-4 text-green-500 font-mono">
+               <div className="min-h-screen p-4 text-green-500">
                     <BlogListing initialBlogs={combinedBlogs} debugInfo={debugInfo} />
                </div>
           </div>

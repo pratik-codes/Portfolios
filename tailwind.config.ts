@@ -9,7 +9,7 @@ export default {
      theme: {
           extend: {
                fontFamily: {
-                    mono: ['JetBrains Mono', 'monospace'], // Add JetBrains Mono as the primary monospace font
+                    sans: ['STIX Two Text', 'serif'],
                },
                colors: {
                     background: "var(--background)",

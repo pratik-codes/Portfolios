@@ -27,14 +27,10 @@ export default function RootLayout({
      return (
           <html lang="en">
                <head>
-                    {/* <link */}
-                    {/*   rel="stylesheet" */}
-                    {/*   href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap" */}
-                    {/* /> */}
                     {/* eslint-disable-next-line @next/next/no-page-custom-font */}
                     <link
                          rel="stylesheet"
-                         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+                         href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;500;600;700&display=swap"
                     />
                </head>
                <body
