@@ -5,7 +5,6 @@ import { getBlogData, getAllBlogIds } from '../../lib/blog-utils';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, Clock, Tag, Book, ExternalLink } from 'lucide-react';
 import { MarkdownContent } from '../client-components/MarkdownContent';
 import { AudioPlayer } from '../client-components/AudioPlayer';
 
@@ -63,124 +62,59 @@ export default function BlogPost(props: any) {
 
                // Return the JSX from this inner async function
                return (
-                    <div className="min-h-screen p-4 text-green-500">
-                         <div className="max-w-4xl mx-auto mt-8">
-                              {/* Back button and external links */}
-                              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-3">
-                                   <Link
-                                        href="/blogs"
-                                        className="flex items-center bg-green-900/30 hover:bg-green-800/50 text-green-400 hover:text-green-300 px-4 py-2 rounded-md transition-colors border border-green-500/30"
-                                   >
-                                        <ArrowLeft className="mr-2" size={16} />
-                                        Back to blogs
-                                   </Link>
+                    <div className="min-h-screen text-green-500 font-light">
+                         <div className="max-w-2xl mx-auto px-6 pt-28 pb-12">
+                              <div className="space-y-12">
+                                   <div className="space-y-6">
+                                        <Link
+                                             href="/blogs"
+                                             className="underline decoration-green-500/50 decoration-1 underline-offset-[2.5px] hover:decoration-green-300 transition-colors hover:text-green-300"
+                                        >
+                                             ← Back to writing
+                                        </Link>
 
-                                   {hasExternalLinks && (
-                                        <div className="flex flex-wrap gap-2 w-full sm:w-auto">
-                                             {hasDevToLink && (
-                                                  <a
-                                                       href={blogData.devto}
-                                                       target="_blank"
-                                                       rel="noopener noreferrer"
-                                                       className="flex items-center bg-green-900/30 hover:bg-green-800/50 text-green-400 hover:text-green-300 px-3 py-2 rounded-md transition-colors border border-green-500/30"
-                                                  >
-                                                       <ExternalLink size={14} className="mr-1" />
-                                                       Read on Dev.to
-                                                  </a>
-                                             )}
-                                             {hasMediumLink && (
-                                                  <a
-                                                       href={blogData.medium}
-                                                       target="_blank"
-                                                       rel="noopener noreferrer"
-                                                       className="flex items-center bg-green-900/30 hover:bg-green-800/50 text-green-400 hover:text-green-300 px-3 py-2 rounded-md transition-colors border border-green-500/30"
-                                                  >
-                                                       <ExternalLink size={14} className="mr-1" />
-                                                       Read on Medium
-                                                  </a>
-                                             )}
-                                        </div>
-                                   )}
-                              </div>
+                                        <h1 className="text-2xl font-medium">{blogData.title}</h1>
 
-                              <div className="flex items-center space-x-2 text-sm mb-4">
-                                   <span className="text-green-400">$</span>
-                                   <span className="animate-pulse">cat blogs/{props.params.id}.md</span>
-                              </div>
-
-                              {/* Blog Header Card */}
-                              <div className="border border-green-500/30 rounded-lg p-6 mb-6 bg-black/20 backdrop-blur-sm">
-                                   <h1 className="text-3xl font-bold mb-4 text-green-300">{blogData.title}</h1>
-
-                                   <p className="text-green-400 mb-4 italic">{blogData.description}</p>
-
-                                   <div className="flex flex-wrap items-center gap-4 text-sm text-green-400 mb-2">
-                                        <div className="flex items-center">
-                                             <Calendar size={14} className="mr-1" />
-                                             <span>{blogData.date}</span>
+                                        <div className="text-sm opacity-80">
+                                             {blogData.date} · {readingTime} min read
                                         </div>
 
-                                        <div className="flex items-center">
-                                             <Clock size={14} className="mr-1" />
-                                             <span>{readingTime} min read</span>
-                                        </div>
-
-                                        <div className="flex items-center">
-                                             <Book size={14} className="mr-1" />
-                                             <span>Blog</span>
-                                        </div>
-                                   </div>
-
-                                   <div className="flex flex-wrap gap-2 mt-4">
-                                        {blogData.tags.map((tag: string) => (
-                                             <span
-                                                  key={tag}
-                                                  className="flex items-center bg-green-900/40 px-2 py-1 rounded text-xs"
-                                             >
-                                                  <Tag size={12} className="mr-1" />
-                                                  {tag}
-                                             </span>
-                                        ))}
-                                   </div>
-                              </div>
-
-                              {/* Blog Content Card */}
-                              <div className="border border-green-500/30 rounded-lg p-6 bg-black/20 backdrop-blur-sm">
-                                   <div className="flex items-center justify-between mb-6">
-                                        <h2 className="text-green-400 font-semibold">Content</h2>
-                                        <div className="flex items-center text-green-400 text-sm">
-                                             <Clock size={14} className="mr-1" />
-                                             <span>{readingTime} min read</span>
-                                        </div>
+                                        {hasExternalLinks && (
+                                             <div className="flex flex-wrap gap-4 text-sm">
+                                                  {hasDevToLink && (
+                                                       <a
+                                                            href={blogData.devto}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="underline decoration-green-500/50 decoration-1 underline-offset-[2.5px] hover:decoration-green-300 transition-colors hover:text-green-300"
+                                                       >
+                                                            Read on Dev.to
+                                                       </a>
+                                                  )}
+                                                  {hasMediumLink && (
+                                                       <a
+                                                            href={blogData.medium}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="underline decoration-green-500/50 decoration-1 underline-offset-[2.5px] hover:decoration-green-300 transition-colors hover:text-green-300"
+                                                       >
+                                                            Read on Medium
+                                                       </a>
+                                                  )}
+                                             </div>
+                                        )}
                                    </div>
 
                                    {/* Audio Player */}
-                                   <div className="mb-6">
-                                        <h3 className="text-lg font-semibold text-green-300 mb-2">📢 Listen to this article</h3>
-                                        <p className="text-sm text-green-400 mb-3">Use the audio player below to listen to this article. You can customize the voice and reading speed with the settings button.</p>
+                                   <div className="space-y-4">
+                                        <h3 className="text-lg font-medium">Listen to this article</h3>
+                                        <p className="text-sm opacity-80">You can customize the voice and reading speed with the settings button.</p>
                                         <AudioPlayer content={blogData.content} />
                                    </div>
 
-                                   {/* Divider */}
-                                   <div className="border-t border-green-500/20 my-6"></div>
-
-                                   <div className="prose prose-invert prose-green max-w-none mt-6">
+                                   <div className="prose prose-invert prose-green max-w-none leading-relaxed">
                                         <MarkdownContent content={blogData.content} />
                                    </div>
-
-                                   <div className="mt-8 pt-4 border-t border-green-500/20 flex justify-center">
-                                        <Link
-                                             href="/blogs"
-                                             className="flex items-center bg-green-900/30 hover:bg-green-800/50 text-green-400 hover:text-green-300 px-4 py-2 rounded-md transition-colors border border-green-500/30"
-                                        >
-                                             <ArrowLeft className="mr-2" size={16} />
-                                             Back to all blogs
-                                        </Link>
-                                   </div>
-                              </div>
-
-                              <div className="mt-8 text-sm">
-                                   $ Terminal v2.0.24 <span className="animate-pulse">█</span>
                               </div>
                          </div>
                     </div>
