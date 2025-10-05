@@ -1,6 +1,6 @@
 ---
 title: "The 3 Levels of Student Engineering Projects"
-date: "2025-8-11"
+date: "11/08/25"
 description: "Transform your tutorial clones into production-ready systems that actually impress employers. Quality beats quantity every time."
 tags: ["projects", "career", "programming", "students"]
 ---

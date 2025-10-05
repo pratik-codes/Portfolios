@@ -60,12 +60,20 @@ async function getMarkdownBlogPosts(): Promise<BlogData[]> {
                }
           })
 
+          // Sort posts by date (dd/mm/yy format)
           return posts.sort((a, b) => {
-               if (a.date < b.date) {
-                    return 1
-               } else {
-                    return -1
-               }
+               // Parse dd/mm/yy format
+               const parseDate = (dateStr: string): Date => {
+                    if (dateStr === 'No date' || dateStr === 'Unknown') return new Date(0);
+                    const [day, month, year] = dateStr.split('/').map(Number);
+                    // Assuming 20xx for years
+                    return new Date(2000 + year, month - 1, day);
+               };
+               
+               const dateA = parseDate(a.date);
+               const dateB = parseDate(b.date);
+               
+               return dateB.getTime() - dateA.getTime();
           })
      } catch (error) {
           console.error('Error loading blog posts directly:', error)

@@ -1,6 +1,6 @@
 ---
 title: "Understanding Memory Management in Rust"
-date: "2025-03-14"
+date: "14/03/25"
 description: "A guide to understanding memory management in Rust, including ownership, borrowing, and lifetimes"
 tags: ["rust", "memory management", "programming"]
 devto: "https://dev.to/pratikcodes/understanding-memory-management-in-rust-48pi"

@@ -42,6 +42,7 @@ export function BlogListing({ initialBlogs }: BlogListingProps) {
                 >
                   {blog.title}
                 </Link>
+                {blog.date && <span className="text-green-500/60 ml-2 text-sm">({blog.date})</span>}
               </li>
             ))}
           </ul>

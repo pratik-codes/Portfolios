@@ -1,6 +1,6 @@
 ---
 title: "Introduction to the Model Context Protocol (MCP): A New Era for AI Data Integration"
-date: "2025-03-16"
+date: "16/03/25"
 description: "Understand the Model Context Protocol and its applications in modern software development."
 tags: ["ai"]
 ---
